@@ -1,0 +1,67 @@
+{
+  "folders": [
+    {
+      "path": "."
+    }
+  ],
+  "settings": {
+    "editor.rulers": [],
+    "css.validate": true, // VS Code標準のCSS文法チェック機能を有効化
+    "css.format.enable": true, // VS Code標準のコード整形機能を有効化
+    "css.format.newlineBetweenRules": true, // CSSのルール間に改行を入れて区切る
+    "css.format.newlineBetweenSelectors": true, // 複数セレクタを記述している場合、各セレクタを改行で区切る
+    "css.format.maxPreserveNewLines": 10, // preserveNewLinesの改行数を10にする
+    "css.format.preserveNewLines": true, // 要素の前にある改行を保持する
+    "css.format.spaceAroundSelectorSeparator": false, // セレクタに使われている >、+、~、の記号の前にスペースを入れない
+    "liveSassCompile.settings.format": "expanded",
+    "liveSassCompile.settings.generateMap": false,
+    "editor.bracketPairColorization.enabled": true, // ブラケット（開きかっこと閉じかっこ）のペアを判別しやすくするために色をつける
+    "editor.formatOnSave": false, // ファイル保存時のフォーマッター機能を無効
+    "editor.codeActionsOnSave": {
+      "source.fixAll.stylelint": "explicit"
+    },
+    "editor.guides.bracketPairs": "active", // ブラケットペア（開きかっこと閉じかっこ）にカーソルを置いているときにガイド線を表示する
+    "editor.insertSpaces": true, // Tabキーを押したときにスペースを入力する
+    "editor.tabSize": 4, // Tabキーを押したときのインデント幅を半角スペース4個にする
+    "editor.unicodeHighlight.ambiguousCharacters": true, // 全角スペースなど、ASCII文字（標準的な半角英数の文字）と間違えやすい文字を強調表示する
+    "editor.unicodeHighlight.includeComments": true, // コメント内の文字にUnicodeや全角スペースなどがあれば強調表示する
+    "editor.wordWrap": "off", // 行を折り返さない
+    "files.eol": "\n", // 行末文字をLFにする
+    "files.encoding": "utf8", // 文字エンコードをUTF-8にする
+    "files.trimTrailingWhitespace": true, // ファイル保存時に行末の空白を削除する
+    "files.insertFinalNewline": false, //ファイル保存時に最後の行に改行を入れる
+    "html.format.enable": true, // VS Code標準のHTML整形機能を有効化
+    "html.format.indentInnerHtml": true, // <head>と<body>タグにインデントを入れる
+    "html.format.maxPreserveNewLines": 10, // preserveNewLinesで保持する改行の数
+    "html.format.preserveNewLines": true, // 要素の前にある改行を保持する
+    "html.format.wrapLineLength": 0, // 1行あたりの最大文字数、0 = 無効（改行しない）
+    "html.format.wrapAttributes": "preserve", // 属性を改行しない
+    "javascript.format.enable": true, // VS Code標準のJavaScript整形機能を有効化
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingEmptyBraces": true, // 空のかっこの開きかっこと閉じかっこの中に空白のスペースを入れる
+    "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBraces": true, // 空でないかっこの開きかっこと閉じかっこに空白のスペースを入れる
+    "javascript.validate.enable": true, // VS Code標準のJavaScript文法チェック機能を有効化
+    "window.autoDetectColorScheme": false,
+    "liveServer.settings.port": 5501, // エディタの外観をPCのカラーテーマ（ライト/ダーク）に自動で切り替える設定を無効
+    // "workbench.colorTheme": "GitHub Light", // エディタの外観をGitHub Lightにする
+  },
+  "extensions": {
+    "recommendations": [
+      "MS-CEINTL.vscode-language-pack-ja", // VS Codeを日本語化
+      "ritwickdey.LiveServer", // ライブリロード付きローカル開発サーバを起動
+      "oderwat.indent-rainbow", // インデントに色をつけて視覚化する機能
+      "ionutvmi.path-autocomplete", // ファイルパスの補完機能
+      "formulahendry.auto-rename-tag", // ペアになっているHTMLタグを自動変更する機能
+      "CelianRiboulet.webvalidator", // HTML、CSSの文法チェック
+      "HTMLHint.vscode-htmlhint", // HTMLの静的分析ツール
+      "smelukov.vscode-csstree", // CSSの検証機能
+      "sainoba.px-to-rem", // 単位をpxからrem、remからpxへ変換するツール
+      "stylelint.vscode-stylelint", // CSSのリンターツール
+      "kisstkondoros.vscode-gutter-preview", // 行番号に画像のプレビューを表示
+      "SimonSiefke.svg-preview", // SVGファイルのプレビュー機能
+      "ICS.japanese-proofreading", // 日本語の文章をチェックする機能
+      "mosapride.zenkaku", // 全角スペースを視覚化
+      "eamodio.gitlens", // Gitの拡張ツール
+      "MS-vsliveshare.vsliveshare", // 共同開発のためのツール
+    ]
+  }
+}

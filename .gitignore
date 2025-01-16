@@ -1,0 +1,10 @@
+# 一般的なファイル
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.idea/
+.vscode/
+node_modules/
+vendor/
+wordpress/.htaccess
