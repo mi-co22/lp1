@@ -39,6 +39,50 @@
   </head>
 
   <body>
+    <header class="header">
+      <div class="header__container">
+        <h1 class="header__logo">
+          <a href="/"
+            ><img
+              src="/assets/image/logo.svg"
+              alt="Kira-Kira Juku"
+              width="240"
+              height="45"
+              class="header__logo-image"
+          /></a>
+        </h1>
+        <button
+          id="hamburger"
+          class="hamburger"
+          aria-label="メニューを開く"
+          aria-controls="gnav"
+          aria-expanded="false"
+        >
+          <span class="hamburger__line" aria-hidden="true"></span>
+        </button>
+        <nav id="gnav" class="gnav" aria-label="メインメニュー">
+          <ul class="gnav__list">
+            <li class="gnav__item">
+              <a href="#reason" class="gnav__link">選ばれる3つの理由</a>
+            </li>
+            <li class="gnav__item">
+              <a href="#course" class="gnav__link">コース・目的</a>
+            </li>
+            <li class="gnav__item">
+              <a href="#price" class="gnav__link">費 用</a>
+            </li>
+          </ul>
+          <div class="gnav__button">
+            <a href="/entry" class="button button--large"
+              >入学説明会に申し込む</a
+            >
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <p class="test">testです。</p>
+    </main>
   <footer></footer>
 
     <script

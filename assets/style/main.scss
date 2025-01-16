@@ -20,8 +20,7 @@ $sp-full-width: 375; // スマホ用のカンプ幅
 $pc-full-width: 1920; // PC用のカンプ幅
 $pc-content-width: 1200; // PC用のカンプのコンテンツ幅(ガイド線の幅)
 // ブレイクポイントの指定
-$breakpoint-df: 768;
-$breakpoint-md: 1060;
+$breakpoint-md: 768;
 $breakpoint-lg: $pc-content-width;
 
 // 本番用か否か
@@ -30,32 +29,21 @@ $production: 0; //0の場合はpxで出力本番用の場合は1にする。
 //  scss: ブレークポイント関数
 //-----------------------------------------------------
 $breakpoints: (
-  "df": "screen and (min-width: #{$breakpoint-df}px)",
   "md": "screen and (min-width: #{$breakpoint-md}px)",
   "lg": "screen and (min-width: #{$breakpoint-lg}px)",
 ) !default;
 
-@mixin mq($breakpoint: df) {
+@mixin mq($breakpoint: md) {
   @media #{map-get($breakpoints, $breakpoint)} {
     @content;
   }
 }
 
 //-----------------------------------------------------
-//   px から rem への単位変換(PCデザイン推奨)
+//  scss: 変換関数群
 //-----------------------------------------------------
-@function px2Rem($px) {
-  @if $production !=1 {
-    @return $px * 1px;
-  }
 
-  @return calc($px / 16) * 1rem;
-}
-
-//-----------------------------------------------------
-//   px から vw への単位変換(SPデザイン推奨)
-//-----------------------------------------------------
-// SP用
+// SP用: vwへの変換
 @function vw($px) {
   @if $production !=1 {
     @return $px * 1px;
@@ -64,7 +52,7 @@ $breakpoints: (
   @return calc($px * 100vw / $sp-full-width);
 }
 
-// タブレット用
+// タブレット用: vwへの変換
 @function vwt($px) {
   @if $production !=1 {
     @return $px * 1px;
@@ -73,10 +61,18 @@ $breakpoints: (
   @return calc($px * 100vw / $pc-content-width);
 }
 
-//-----------------------------------------------------
+// PC用: pxをremに変換
+@function px2Rem($px) {
+  @if $production !=1 {
+    @return $px * 1px;
+  }
+
+  @return calc($px / 16) * 1rem;
+}
+
+
 // 行間の指定
 // デザインデータの行間反映用
-//-----------------------------------------------------
 
 @mixin lineheight($fontsize, $lin) {
   // $fontsizeの数値の単位はpx
@@ -126,35 +122,41 @@ img {
   height: vw(70);
   background: $color-contrast;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  @include mq(md) {
+  @include mq {
+    height: vwt(100);
+  }
+  @include mq(lg) {
     height: px2Rem(100);
   }
   &__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include mq(md) {
-      max-width: px2Rem(1200);
+    @include mq{
+      max-width: vwt(1200);
       margin-inline: auto;
-      padding: 0 px2Rem(20);
+      padding: 0 vwt(20);
       height: 100%;
+    }
+    @include mq(lg) {
+      max-width: px2Rem(1200);
+      padding: 0 px2Rem(20);
     }
   }
   &__logo {
     flex-shrink: 0;
     margin-left: vw(16);
     width: vw(166);
-
-    @include mq(md) {
-      width: px2Rem(240);
+    @include mq{
+      width: vwt(240);
       margin-left: 0;
     }
+    @include mq(lg) {
+      width: px2Rem(240);
+    }
   }
-  // &__logo-image{
-  //     width: 100%;
-  // }
-}
 
+}
 //-----------------------------------------------------
 // hamburger
 //-----------------------------------------------------
@@ -168,7 +170,7 @@ img {
   background: $color-main;
   cursor: pointer;
 
-  @include mq(md) {
+  @include mq {
     display: none;
   }
 
@@ -216,7 +218,6 @@ img {
     }
   }
 }
-
 //-----------------------------------------------------
 // gnav
 //-----------------------------------------------------
@@ -229,12 +230,11 @@ img {
   width: 100%;
   background: $color-main;
   overflow-y: auto;
-  /* -webkit-overflow-scrolling: touch; iOSで慣性スクロール有効化*/
   color: $color-contrast;
   font-size: vw(18);
   @include lineheight(18, 26);
 
-  @include mq(md) {
+  @include mq{
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -248,9 +248,12 @@ img {
   &__list {
     padding: vw(22) vw(20);
 
-    @include mq(md) {
+    @include mq {
       display: flex;
       padding: 0;
+      margin-right: vwt(23);
+    }
+    @include mq(lg) {
       margin-right: px2Rem(23);
     }
   }
@@ -262,7 +265,7 @@ img {
     &:last-child {
       margin-bottom: 0;
     }
-    @include mq(md) {
+    @include mq{
       border-bottom: none;
       padding-bottom: 0;
       margin-bottom: 0;
@@ -273,7 +276,18 @@ img {
     display: block;
     padding-left: vw(26);
     position: relative;
-
+    @include mq() {
+      color: inherit;
+      font-weight: 500;
+      display: block;
+      padding: vwt(24);
+      font-size: vwt(20);
+      @include lineheight(20, 36);
+    }
+    @include mq(lg) {
+      padding: px2Rem(24);
+      font-size: px2Rem(20);
+    }
     &::before {
       position: absolute;
       top: 50%;
@@ -285,421 +299,27 @@ img {
       height: vw(14);
       background: url(/assets/image/icon_arrow-right.svg) center center /
         contain no-repeat;
-      @include mq(md) {
+      @include mq{
         display: none;
       }
     }
 
-    // &[aria-current] {
-    //     padding-left: vw(15);
-    //     border-left: vw(5) solid #37952f;
 
-    //     &::after {
-    //         @include mq {
-    //             content: "";
-    //             display: block;
-    //             width: 100%;
-    //             height: vw(4);
-    //             background: #37952f;
-    //         }
-    //     }
-    // }
-
-    @include mq(md) {
-      color: inherit;
-      font-weight: bold;
-      // text-transform: uppercase;
-      // text-decoration: none;
-
-      // &:hover {
-      //     color: #37952f;
-      // }
-
-      display: block;
-      padding: px2Rem(24);
-      font-size: px2Rem(20);
-      @include lineheight(20, 36);
-    }
   }
   &__button {
     padding: vw(6) vw(20) vw(32);
-    @include mq(md) {
+    @include mq {
       padding: 0;
     }
   }
 }
-
-//-----------------------------------------------------
-// コンポーネント
-//-----------------------------------------------------
-.button {
-  display: block;
-  margin-inline: auto;
-  padding: vw(21) vw(41);
-  border-radius: 2em;
-  // border: 2px solid;
-  text-align: center;
-  text-decoration: none;
-  color: $color-contrast;
-  font-weight: bold;
-  font-size: vw(18);
-  @include lineheight(18, 26);
-  @include mq {
-    padding: px2Rem(19) px2Rem(41);
-    font-size: px2Rem(24);
-    @include lineheight(24, 36);
+.test{
+  margin-top: 500px;
+  font-size: vw(20);
+  @include mq(){
+    font-size: vwt(40);
   }
-  &--small {
-    font-size: vw(16);
-    width: vw(250);
-    @include lineheight(16, 36);
-    padding: vw(6) vw(41);
-    @include mq {
-      width: vwt(230);
-    }
-    @include mq(md) {
-      min-width: px2Rem(340);
-      font-size: px2Rem(24);
-      @include lineheight(18, 26);
-      padding: px2Rem(19) px2Rem(41);
-    }
-  }
-  &--large {
-    max-width: vw(350);
-    font-size: vw(18);
-    padding: vw(20) vw(41);
-    background: $color-contrast;
-    color: $color-main;
-    @include mq(md) {
-      color: $color-contrast;
-      font-size: px2Rem(20);
-      @include lineheight(20, 36);
-      min-width: px2Rem(200);
-      background-image: linear-gradient(
-        90deg,
-        rgba(2, 113, 224, 1),
-        rgba(83, 162, 240, 1)
-      );
-      padding: px2Rem(12) px2Rem(41);
-    }
-  }
-  &--main {
-    font-size: vw(20);
-    color: $color-contrast;
-    background-image: linear-gradient(
-      90deg,
-      rgba(2, 113, 224, 1),
-      rgba(83, 162, 240, 1)
-    );
-    @include mq(md) {
-      font-size: px2Rem(24);
-      @include lineheight(24, 36);
-      min-width: 350px;
-    }
-  }
-  &--warning {
-    background: $color-warning;
-  }
-  &--alert {
-    background: $color-alert;
-  }
-  &--success {
-    background: $color-success;
-  }
-}
-.mainvisual {
-  margin-top: vw(70);
-  @include mq(md) {
-    margin-top: px2Rem(100);
-    // position: relative;
-  }
-  &__body {
-    padding: vw(25) vw(20) vw(14);
-    @include mq {
-      display: flex;
-      margin-inline: auto;
-      max-width: vwt(900);
-      justify-content: space-between;
-      margin-top: vwt(-37);
-    }
-    @include mq(md) {
-      max-width: px2Rem(1140);
-      margin-top: px2Rem(-37);
-      // position: absolute;
-      padding: 0 px2Rem(20);
-    }
-  }
-  &__button {
-    margin-bottom: vwt(12);
-
-    @include mq {
-      margin-bottom: vwt(12);
-    }
-  }
-}
-.title {
-  font-size: vw(28);
-  font-weight: bold;
-  @include lineheight(28, 36);
-  margin-bottom: vw(17);
-  text-align: center;
-  @include mq {
-    margin-bottom: px2Rem(32);
-    font-size: px2Rem(36);
-    @include lineheight(36, 36);
-  }
-  span {
-    color: $color-attention;
-    font-size: vw(41);
-    line-height: 1.3;
-    @include mq {
-      font-size: px2Rem(54);
-    }
-  }
-}
-
-.text {
-  &--attension {
-    color: #ff0080;
-    font-family: "Poppins", serif;
-  }
-  span {
-    font-weight: bold;
-    @include mq {
-      font-size: px2Rem(32);
-    }
-  }
-}
-
-.main {
-  padding: 0 vw(16);
-  margin-inline: auto;
-  // @include mq{
-  //     padding: 0 vw(16);
-
-  // }
-  &__container {
-    padding: vw(64) 0;
-    @include mq {
-      max-width: px2Rem(1200);
-      padding: 0 px2Rem(20);
-      margin-inline: auto;
-    }
-  }
-  &__section {
-    @include mq {
-      padding: px2Rem(72) 0;
-    }
-  }
-}
-.media {
-  margin-bottom: vw(32);
-  &--reverse {
-    @include mq {
-      flex-direction: row-reverse;
-      .media__image {
-        margin-left: px2Rem(40);
-        margin-right: 0;
-      }
-    }
-  }
-  &:last-child {
-    margin-bottom: 0;
-  }
-  @include mq {
-    display: flex;
-    margin-bottom: px2Rem(48);
-  }
-  &__image {
-    @include mq {
-      flex: 0 1 48.3%;
-      margin-right: px2Rem(35);
-    }
-  }
-  &__body {
-    margin-top: vw(11);
-    @include mq {
-      flex: 1;
-      margin-top: 0;
-    }
-  }
-  &__number {
-    color: $color-attention;
-    font-size: vw(24);
-    font-style: italic;
-    font-weight: bold;
-    line-height: 1.1;
-    margin-bottom: vw(10);
-    @include mq {
-      font-size: px2Rem(28);
-      margin-bottom: 0;
-      line-height: 1.5;
-    }
-    span {
-      font-size: vw(36);
-      margin-left: 0.1em;
-      @include mq {
-        font-size: px2Rem(42);
-      }
-    }
-  }
-  &__title {
-    font-size: vw(20);
-    font-weight: bold;
-    margin-bottom: vw(7);
-    line-height: 1.5;
-    @include mq {
-      font-size: px2Rem(24);
-      margin-bottom: px2Rem(18);
-    }
-  }
-}
-.cta {
-  background: rgba(255, 85, 85, 0.1);
-  margin: 0 calc(50% - 50vw);
-  width: 100vw;
-  &__container {
-    padding: vw(40) vw(16);
-    @include mq {
-      padding: px2Rem(55) px2Rem(20);
-    }
-  }
-  &__text {
-    text-align: center;
-    margin-bottom: vw(12);
-
-    @include mq {
-      margin-bottom: px2Rem(12);
-    }
-  }
-  &__button {
-    width: vw(305);
-  }
-}
-.test {
-  color: red;
-}
-
-.tab {
-  font-weight: bold;
-  &__list {
-    display: flex;
-    column-gap: 2px;
-  }
-  &__button {
-    cursor: pointer;
-    flex: 1;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-align: center;
-    border-radius: 12px 12px 0px 0px;
-    @include mq {
-      font-size: px2Rem(24);
-    }
-    &.is-active {
-      background: $color-background;
-    }
-  }
-  &__panel {
-    display: none;
-    line-height: 1.75;
-    @include mq {
-      padding: px2Rem(32);
-    }
-    &.is-active {
-      display: flex;
-      flex-direction: column;
-      background: $color-background;
-      @include mq {
-        flex-direction: row;
-      }
-    }
-  }
-  &__text {
-    position: relative;
-    padding-left: vw(30);
-    @include mq {
-      font-size: px2Rem(24);
-    }
-    &::before {
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-63%);
-      display: block;
-      content: "";
-      width: vw(18);
-      height: vw(15);
-      background: url(/assets/image/icon_arrow-right_blue.svg) center center /
-        contain no-repeat;
-    }
-  }
-  &__item {
-    @include mq {
-      margin-right: px2Rem(30);
-    }
-    &:nth-of-type(2n) {
-      margin-right: 0;
-    }
-  }
-  /* 共通のコンテナスタイル */
-  &__image-wrapper {
-    width: 100%;
-    height: vw(220);
-    // height: 250px; /* スマホでは高さを小さく */
-    margin-bottom: 20px;
-    border-radius: 12px;
-    overflow: hidden;
-    @include mq {
-      height: auto;
-    }
-  }
-  &__image {
-    width: 100%;
-    height: 100%;
-    &--cover {
-      object-fit: cover;
-      object-position: center; /* 中央を基準に表示 */
-      // @include mq{
-      //     object-fit:none;
-      // }
-    }
-    @include mq {
-      height: auto;
-    }
-  }
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-  font-family:"Noto Sans JP", serif;
-}
-
-th,
-td {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-  word-break: break-word;
-  vertical-align: middle;
-}
-
-th {
-  background-color: #f4f4f4;
-  font-weight: normal;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  table {
-    table-layout: fixed;
-  }
-
-  th,
-  td {
-    font-size: 14px;
-    padding: 8px;
+  @include mq(lg){
+    font-size: px2Rem(40);
   }
 }

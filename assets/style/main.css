@@ -1,0 +1,252 @@
+@charset "UTF-8";
+body {
+  color: #333;
+  font-family: "Poppins", "Roboto", "Avenir", "Helvetica Neue", "Helvetica", "Arial", "Noto Sans JP", "Hiragino Sans", "ヒラギノ角ゴシック", YuGothic, "Yu Gothic", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", serif;
+  line-height: 1.75;
+}
+
+a {
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:focus, a:hover {
+  opacity: 0.6;
+}
+
+img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+.sp-block {
+  display: block;
+}
+@media screen and (min-width: 768px) {
+  .sp-block {
+    display: none;
+  }
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  height: 70px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+@media screen and (min-width: 768px) {
+  .header {
+    height: 100px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header {
+    height: 100px;
+  }
+}
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (min-width: 768px) {
+  .header__container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding: 0 20px;
+    height: 100%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header__container {
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+}
+.header__logo {
+  flex-shrink: 0;
+  margin-left: 16px;
+  width: 166px;
+}
+@media screen and (min-width: 768px) {
+  .header__logo {
+    width: 240px;
+    margin-left: 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .header__logo {
+    width: 240px;
+  }
+}
+
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border: 0;
+  background: #005bac;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+}
+.hamburger__line {
+  position: relative;
+  width: 30px;
+  height: 5px;
+  background: #fff;
+}
+.hamburger__line::before, .hamburger__line::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 30px;
+  height: 5px;
+  background: #fff;
+  transition: transform 0.3s;
+}
+.hamburger__line::before {
+  top: -10px;
+  height: 5px;
+}
+.hamburger__line::after {
+  bottom: -10px;
+}
+
+/*閉じる*/
+.hamburger[aria-expanded=true] .hamburger__line {
+  background: transparent;
+}
+.hamburger[aria-expanded=true] .hamburger__line::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.hamburger[aria-expanded=true] .hamburger__line::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.gnav {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  left: 0;
+  top: 70px;
+  width: 100%;
+  background: #005bac;
+  overflow-y: auto;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.4444444444;
+}
+@media screen and (min-width: 768px) {
+  .gnav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    height: auto;
+    color: #333;
+    background: none;
+  }
+}
+.gnav__list {
+  padding: 22px 20px;
+}
+@media screen and (min-width: 768px) {
+  .gnav__list {
+    display: flex;
+    padding: 0;
+    margin-right: 23px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .gnav__list {
+    margin-right: 23px;
+  }
+}
+.gnav__item {
+  border-bottom: 1px solid #707070;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+.gnav__item:last-child {
+  margin-bottom: 0;
+}
+@media screen and (min-width: 768px) {
+  .gnav__item {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
+.gnav__link {
+  display: block;
+  padding-left: 26px;
+  position: relative;
+}
+@media screen and (min-width: 768px) {
+  .gnav__link {
+    color: inherit;
+    font-weight: 500;
+    display: block;
+    padding: 24px;
+    font-size: 20px;
+    line-height: 1.8;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .gnav__link {
+    padding: 24px;
+    font-size: 20px;
+  }
+}
+.gnav__link::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-63%);
+  display: block;
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: url(/assets/image/icon_arrow-right.svg) center center/contain no-repeat;
+}
+@media screen and (min-width: 768px) {
+  .gnav__link::before {
+    display: none;
+  }
+}
+.gnav__button {
+  padding: 6px 20px 32px;
+}
+@media screen and (min-width: 768px) {
+  .gnav__button {
+    padding: 0;
+  }
+}
+
+.test {
+  margin-top: 500px;
+  font-size: 20px;
+}
+@media screen and (min-width: 768px) {
+  .test {
+    font-size: 40px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .test {
+    font-size: 40px;
+  }
+}

@@ -9,7 +9,7 @@ $(function(){
   //グロナビを $gnavに格納
   const $gnav = $('#gnav');
   //ヘッダーのブレイクポイントを point_headerに格納
-  const point_header = window.matchMedia('screen and (min-width: 1050px)');
+  const point_header = window.matchMedia('screen and (min-width: 768px)');
 
   //ハンバーガーメニューボタンがクリックされた時
   $trigger.on('click',function(){
