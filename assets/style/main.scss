@@ -682,28 +682,49 @@ img {
   font-weight: bold;
   &__list {
     display: flex;
-    column-gap: 2px;
+    column-gap: vw(15);
+
+    @include mq{
+      column-gap: vwt(35);
+    }
+    @include mq(lg){
+      column-gap: px2Rem(35);
+    }
   }
   &__button {
     cursor: pointer;
     flex: 1;
-    padding-top: 10px;
-    padding-bottom: 10px;
     text-align: center;
     border-radius: 12px 12px 0px 0px;
+    background: #F0F0F0;
+    color: #929292;
+    font-size: vw(18);
+    padding: vw(20) 0;
+
     @include mq {
+      font-size: vwt(24);
+      padding: vwt(20);
+    }
+    @include mq(lg) {
       font-size: px2Rem(24);
+      padding: px2Rem(20);
+
     }
     &.is-active {
       background: $color-background;
+      color: $color-normal;
     }
   }
   &__panel {
     display: none;
     line-height: 1.75;
-
+    margin: 0 calc(50% - 50vw);
+    width: 100vw;
+    padding: vw(28) vw(16);
     @include mq {
       padding: vwt(32) vwt(32) 0;
+      margin: 0;
+    width: auto;
     }
     @include mq(lg) {
       padding: px2Rem(32)  px2Rem(32) 0;
@@ -715,6 +736,7 @@ img {
       background: $color-background;
       @include mq {
         flex-direction: row;
+        justify-content: space-between;
       }
     }
   }
@@ -756,16 +778,12 @@ img {
     margin-bottom: vw(28);
 
     @include mq {
-      margin-right: vwt(30);
       margin-bottom: vwt(40);
 
-      width: vwt(532);
+      width:48.54%;
     }
     @include mq(lg) {
-      margin-right: px2Rem(30);
       margin-bottom: px2Rem(40);
-
-      width: px2Rem(532);
     }
     &:nth-of-type(2n) {
       margin-right: 0;
