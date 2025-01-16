@@ -94,7 +94,217 @@
     </div>
     <main class="main">
       <section class="main__section">
-        <div class="main__container"></div>
+        <div class="main__container">
+          <h2 class="title">コース・目的</h2>
+          <div class="tab">
+            <div
+              class="tab__list"
+              role="tablist"
+              aria-labelledby="tablist-label"
+            >
+              <button
+                class="tab__button is-active js-tab"
+                type="button"
+                role="tab"
+                id="tab1"
+                aria-controls="tab-panel1"
+                aria-selected="true"
+              >
+                学年別から選ぶ
+              </button>
+              <button
+                class="tab__button js-tab"
+                type="button"
+                role="tab"
+                id="tab2"
+                aria-controls="tab-panel2"
+                aria-selected="false"
+                tabindex="-1"
+              >
+                タブ2
+              </button>
+              <!-- <button class="tab__button js-tab" type="button" role="tab" id="tab3" aria-controls="tab-panel3" aria-selected="false"
+            tabindex="-1">タブ3</button> -->
+            </div>
+            <div
+              id="tab__panel1"
+              class="tab__panel js-tab__panel is-active"
+              role="tabpanel"
+              tabindex="0"
+              aria-labelledby="tab1"
+            >
+              <div class="tab__item">
+                <a href="#" class="tab__link">
+                  <div class="tab__image-wrapper">
+                    <picture class="tab__image">
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="/assets/image/pht_cource01_pc.jpg"
+                        type="image/jpg"
+                      />
+                      <source
+                        media="(max-width: 767px)"
+                        srcset="/assets/image/pht_cource01_sp.jpg"
+                        type="image/jpg"
+                      />
+                      <img
+                        src="/assets/image/pht_cource01_pc.jpg"
+                        alt=""
+                        class="picture-img"
+                        width="532"
+                        height="329"
+                      />
+                    </picture>
+                  </div>
+                  <p class="tab__text">高校生</p>
+                </a>
+              </div>
+              <div class="tab__item">
+                <a href="#" class="tab__link">
+                  <div class="tab__image-wrapper">
+                    <picture class="tab__image">
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="/assets/image/pht_cource02_pc.jpg"
+                        type="image/jpg"
+                      />
+                      <source
+                        media="(max-width: 767px)"
+                        srcset="/assets/image/pht_cource02_sp.jpg"
+                        type="image/jpg"
+                      />
+                      <img
+                        src="/assets/image/pht_cource01_pc.jpg"
+                        alt=""
+                        class="picture-img"
+                        width="532"
+                        height="329"
+                      />
+                    </picture>
+                  </div>
+                  <p class="tab__text">高校3年生</p>
+                </a>
+              </div>
+              <div class="tab__item">
+                <a href="#" class="tab__link">
+                  <div class="tab__image-wrapper">
+                    <picture class="tab__image">
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="/assets/image/pht_cource03_pc.jpg"
+                        type="image/jpg"
+                      />
+                      <source
+                        media="(max-width: 767px)"
+                        srcset="/assets/image/pht_cource03_sp.jpg"
+                        type="image/jpg"
+                      />
+                      <img
+                        src="/assets/image/pht_cource03_pc.jpg"
+                        alt=""
+                        class="picture-img"
+                        width="532"
+                        height="329"
+                      />
+                    </picture>
+                  </div>
+                  <p class="tab__text">高校2年生</p>
+                </a>
+              </div>
+              <div class="tab__item">
+                <a href="#" class="tab__link">
+                  <div class="tab__image-wrapper">
+                    <picture class="tab__image">
+                      <source
+                        media="(min-width: 768px)"
+                        srcset="/assets/image/pht_cource04_pc.jpg"
+                        type="image/jpg"
+                      />
+                      <source
+                        media="(max-width: 767px)"
+                        srcset="/assets/image/pht_cource04_sp.jpg"
+                        type="image/jpg"
+                      />
+                      <img
+                        src="/assets/image/pht_cource04_pc.jpg"
+                        alt=""
+                        class="picture-img"
+                        width="532"
+                        height="329"
+                      />
+                    </picture>
+                  </div>
+                  <p class="tab__text">高校1年生</p>
+                </a>
+              </div>
+            </div>
+            <div
+              id="tab__panel2"
+              class="tab__panel js-tab__panel"
+              role="tabpanel"
+              tabindex="0"
+              aria-labelledby="tab2"
+            >
+              <p>タブパネル2の内容</p>
+            </div>
+            <!-- <div id="tab__panel3" class="tab__panel js-tab__panel" role="tabpanel" tabindex="0" aria-labelledby="tab3">
+          <p>
+            タブパネル3の内容
+          </p>
+          </div> -->
+          </div>
+        </div>
+      </section>
+      <div class="cta">
+        <div class="cta__container">
+          <p class="cta__text">
+            入学ご検討の方は、まずは入学説明会に<br
+              class="sp-block"
+            />お越しください
+          </p>
+          <a href="/entry/" class="cta__button button button--main"
+            >入学説明会に申し込む</a
+          >
+        </div>
+      </div>
+      <section class="main__section">
+        <div class="main__container">
+          <h2 class="title">費 用</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>年間講数</th>
+                <th>年間授業料（税込み）</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>5講</td>
+                <td class="text text--attension"><span>24,500</span>円</td>
+              </tr>
+              <tr>
+                <td>10講</td>
+                <td class="text text--attension"><span>49,000</span>円</td>
+              </tr>
+              <tr>
+                <td>11講</td>
+                <td class="text text--attension"><span>53,900</span>円</td>
+              </tr>
+              <tr>
+                <td>12講</td>
+                <td class="text text--attension"><span>58,800</span>円</td>
+              </tr>
+              <tr>
+                <td>22講</td>
+                <td class="text text--attension"><span>107,800</span>円</td>
+              </tr>
+              <tr>
+                <td>24講</td>
+                <td class="text text--attension"><span>117,600</span>円</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </section>
       <div class="cta">
         <div class="cta__container">

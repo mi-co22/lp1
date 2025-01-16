@@ -7,6 +7,7 @@
 // カラー
 $color-normal: #333;
 $color-pale: #707070;
+$color-line: #ccc;
 $color-main: #005bac;
 $color-contrast: #fff;
 $color-attention: #f11f8d;
@@ -70,7 +71,6 @@ $breakpoints: (
   @return calc($px / 16) * 1rem;
 }
 
-
 // 行間の指定
 // デザインデータの行間反映用
 
@@ -132,7 +132,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include mq{
+    @include mq {
       max-width: vwt(1200);
       margin-inline: auto;
       padding: 0 vwt(20);
@@ -147,7 +147,7 @@ img {
     flex-shrink: 0;
     margin-left: vw(16);
     width: vw(166);
-    @include mq{
+    @include mq {
       width: vwt(240);
       margin-left: 0;
     }
@@ -155,7 +155,6 @@ img {
       width: px2Rem(240);
     }
   }
-
 }
 //-----------------------------------------------------
 // hamburger
@@ -234,7 +233,7 @@ img {
   font-size: vw(18);
   @include lineheight(18, 26);
 
-  @include mq{
+  @include mq {
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -265,7 +264,7 @@ img {
     &:last-child {
       margin-bottom: 0;
     }
-    @include mq{
+    @include mq {
       border-bottom: none;
       padding-bottom: 0;
       margin-bottom: 0;
@@ -299,12 +298,10 @@ img {
       height: vw(14);
       background: url(/assets/image/icon_arrow-right.svg) center center /
         contain no-repeat;
-      @include mq{
+      @include mq {
         display: none;
       }
     }
-
-
   }
   &__button {
     padding: vw(6) vw(20) vw(32);
@@ -333,7 +330,6 @@ img {
     }
   }
   &__section {
-
     @include mq {
       padding: vwt(72) 0;
     }
@@ -343,206 +339,204 @@ img {
   }
 }
 
-.section{
-  &--other{
+.section {
+  &--other {
     margin: 0 calc(50% - 50vw);
     width: 100vw;
-    &__container{
-      @include mq{
+    &__container {
+      @include mq {
         display: flex;
-
       }
     }
   }
 }
 
-.footer{
-  padding:vw(32) vw(16);
+.footer {
+  padding: vw(32) vw(16);
   margin-inline: auto;
-  background: #DDDDDD;
-  text-align:center;
-  @include mq{
-  padding:vwt(50) vwt(20);
+  background: #dddddd;
+  text-align: center;
+  @include mq {
+    padding: vwt(50) vwt(20);
   }
-  @include mq(lg){
-    padding:px2Rem(50) px2Rem(20);
+  @include mq(lg) {
+    padding: px2Rem(50) px2Rem(20);
     font-size: px2Rem(13);
-    }
-  &__copyright{
+  }
+  &__copyright {
     font-size: vw(13);
-    @include lineheight(13,28);
-    @include mq{
+    @include lineheight(13, 28);
+    @include mq {
       font-size: vwt(13);
-      }
-      @include mq(lg){
-        font-size: px2Rem(13);
-        }
+    }
+    @include mq(lg) {
+      font-size: px2Rem(13);
+    }
   }
 }
-
 
 //-----------------------------------------------------
 // メインビジュアル
 //-----------------------------------------------------
-.mainvisual{
-  @include mq{
-    background: url(/assets/image/mainVIsual_pc.jpg)center center /
-    cover no-repeat;
-    width:100%;
+.mainvisual {
+  @include mq {
+    background: url(/assets/image/mainVIsual_pc.jpg) center center / cover
+      no-repeat;
+    width: 100%;
     height: vwt(650);
     margin-top: vwt(100);
   }
-  @include mq(lg){
+  @include mq(lg) {
     height: px2Rem(650);
     margin-top: px2Rem(100);
-
   }
-  &__container{
-
-    @include mq{
+  &__container {
+    @include mq {
       max-width: vwt(1200);
       margin-inline: auto;
       padding: vwt(104) vwt(20) vwt(141);
     }
-    @include mq(lg){
+    @include mq(lg) {
       max-width: px2Rem(1200);
       padding: px2Rem(104) px2Rem(20) vpx2Remt(141);
     }
   }
-  &__icon{
+  &__icon {
     text-align: center;
     line-height: 1;
-    background: url(/assets/image/mainVIsual_bg.png) center center /
-        contain no-repeat;
-    @include mq{
+    background: url(/assets/image/mainVIsual_bg.png) center center / contain
+      no-repeat;
+    @include mq {
       width: vwt(326);
       padding: vwt(37) 0;
       margin-bottom: vwt(32);
     }
-    @include mq(lg){
+    @include mq(lg) {
       width: px2Rem(326);
       padding: px2Rem(37) 0;
       margin-bottom: px2Rem(32);
     }
   }
-  &__icon-text{
-    @include mq{
-      font-size:vwt(20);
+  &__icon-text {
+    @include mq {
+      font-size: vwt(20);
     }
-    @include mq(lg){
-      font-size:px2Rem(20);
-
+    @include mq(lg) {
+      font-size: px2Rem(20);
     }
   }
-  &__icon-number{
+  &__icon-number {
     color: $color-attention;
     font-style: italic;
     font-weight: 900;
-    @include mq{
-      font-size:vwt(54);
+    @include mq {
+      font-size: vwt(54);
     }
-    @include mq(lg){
-      font-size:px2Rem(54);
-
-    }
-  }
-  &__text{
-    @include mq{
-      font-size:vwt(33);
-    }
-    @include mq(lg){
-      font-size:px2Rem(33);
-
+    @include mq(lg) {
+      font-size: px2Rem(54);
     }
   }
-  &__title{
+  &__text {
+    @include mq {
+      font-size: vwt(33);
+    }
+    @include mq(lg) {
+      font-size: px2Rem(33);
+    }
+  }
+  &__title {
     color: $color-main;
     font-weight: 900;
-    @include mq{
-      font-size:vwt(60);
+    @include mq {
+      font-size: vwt(60);
     }
-    @include mq(lg){
-      font-size:px2Rem(60);
-
+    @include mq(lg) {
+      font-size: px2Rem(60);
     }
   }
 }
 //-----------------------------------------------------
 // コンポーネント
 //-----------------------------------------------------
-.card{
-
-    color: $color-contrast;
-    font-weight: bold;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    font-size: vw(22);
-    @include mq{
+.card {
+  color: $color-contrast;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-size: vw(22);
+  @include mq {
     width: 50%;
     font-size: vwt(32);
-    }
-    @include mq(lg){
+  }
+  @include mq(lg) {
     font-size: px2Rem(32);
 
     // }
-    }
-    // &__image{
-    //   transition: .4s;
-    // }
-  &:hover{
+  }
+  &:hover {
     opacity: 1;
-    .card__image-wrapper{
+    .card__image-wrapper {
       transform: scale(1.2);
     }
   }
 
-  &__image-wrapper{
-    transition: .4s;
+  &__image-wrapper {
+    transition: 0.4s;
   }
-  &__text{
+  &__text {
     position: absolute;
     top: 50%;
     left: vw(16);
     transform: translateY(-50%);
-    @include mq{
+    @include mq {
       left: 50%;
       transform: translate(-50%, -50%);
     }
   }
 }
+.text {
+  &--attension {
+    color: #ff0080;
+    font-family: "Poppins";
+  }
+  span {
+    font-weight: bold;
+    font-size: vw(28);
 
-.cta {
-  background: rgba(255, 85, 85, 0.1);
-  margin: 0 calc(50% - 50vw);
-  width: 100vw;
-  &__container {
-    padding: vw(40) vw(16);
     @include mq {
-      padding: vwt(55) vwt(20);
+      font-size: vwt(32);
     }
     @include mq(lg) {
-      padding: px2Rem(55) px2Rem(20);
+      font-size: px2Rem(32);
     }
   }
-  &__text {
-    text-align: center;
-    margin-bottom: vw(12);
+}
+.title {
+  font-size: vw(28);
+  font-weight: bold;
+  @include lineheight(28, 36);
+  margin-bottom: vw(17);
+  text-align: center;
+  @include mq {
+    margin-bottom: vwt(32);
+    font-size: vwt(36);
+    @include lineheight(36, 36);
+  }
+  @include mq {
+    margin-bottom: px2Rem(32);
+    font-size: px2Rem(36);
+  }
+  span {
+    color: $color-attention;
+    font-size: vw(41);
+    line-height: 1.3;
     @include mq {
-      margin-bottom: vwt(12);
+      font-size: vwt(54);
     }
     @include mq(lg) {
-      margin-bottom: px2Rem(12);
+      font-size: px2Rem(54);
     }
-  }
-  &__button {
-    width: vw(305);
-    // @include mq {
-    //   margin-bottom: vwt(12);
-    // }
-    // @include mq(lg) {
-    //   margin-bottom: px2Rem(12);
-    // }
   }
 }
 .button {
@@ -639,7 +633,7 @@ img {
       rgba(2, 113, 224, 1),
       rgba(83, 162, 240, 1)
     );
-    @include mq{
+    @include mq {
       font-size: vwt(24);
       @include lineheight(24, 36);
       width: vwt(360);
@@ -659,3 +653,201 @@ img {
     background: $color-success;
   }
 }
+.cta {
+  background: rgba(255, 85, 85, 0.1);
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+  &__container {
+    padding: vw(40) vw(16);
+    @include mq {
+      padding: vwt(55) vwt(20);
+    }
+    @include mq(lg) {
+      padding: px2Rem(55) px2Rem(20);
+    }
+  }
+  &__text {
+    text-align: center;
+    margin-bottom: vw(12);
+    @include mq {
+      margin-bottom: vwt(12);
+    }
+    @include mq(lg) {
+      margin-bottom: px2Rem(12);
+    }
+  }
+}
+
+.tab {
+  font-weight: bold;
+  &__list {
+    display: flex;
+    column-gap: 2px;
+  }
+  &__button {
+    cursor: pointer;
+    flex: 1;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    border-radius: 12px 12px 0px 0px;
+    @include mq {
+      font-size: px2Rem(24);
+    }
+    &.is-active {
+      background: $color-background;
+    }
+  }
+  &__panel {
+    display: none;
+    line-height: 1.75;
+
+    @include mq {
+      padding: vwt(32) vwt(32) 0;
+    }
+    @include mq(lg) {
+      padding: px2Rem(32)  px2Rem(32) 0;
+    }
+    &.is-active {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      background: $color-background;
+      @include mq {
+        flex-direction: row;
+      }
+    }
+  }
+  &__text {
+    position: relative;
+    padding-left: vw(30);
+    @include mq {
+      font-size: vwt(20);
+    padding-left: vwt(30);
+
+    }
+    @include mq(lg) {
+      font-size: px2Rem(20);
+    padding-left: px2Rem(30);
+    }
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-63%);
+      display: block;
+      content: "";
+      width: vw(18);
+      height: vw(15);
+      background: url(/assets/image/icon_arrow-right_blue.svg) center center /
+        contain no-repeat;
+        @include mq {
+          width: vwt(18);
+          height: vwt(15);
+
+        }
+        @include mq(lg) {
+          width: px2Rem(18);
+          height: px2Rem(15);
+        }
+    }
+  }
+  &__item {
+    margin-bottom: vw(28);
+
+    @include mq {
+      margin-right: vwt(30);
+      margin-bottom: vwt(40);
+
+      width: vwt(532);
+    }
+    @include mq(lg) {
+      margin-right: px2Rem(30);
+      margin-bottom: px2Rem(40);
+
+      width: px2Rem(532);
+    }
+    &:nth-of-type(2n) {
+      margin-right: 0;
+    }
+  }
+  /* 共通のコンテナスタイル */
+  &__image-wrapper {
+    // transition: 0.4s;
+    margin-bottom: vw(16);
+    border-radius: 12px;
+    overflow: hidden;
+    @include mq {
+      margin-bottom: vwt(16);
+    }
+    @include mq(lg){
+      margin-bottom: px2Rem(16);
+    }
+  }
+  &__link {
+    // overflow: hidden;
+
+      &:hover {
+        opacity: 1;
+        .tab__image {
+          transform: scale(1.2);
+        }
+      }
+    }
+  &__image{
+    transition: 0.4s;
+  }
+
+}
+
+
+table {
+
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "Noto Sans JP", serif;
+  border: 3px solid $color-line;
+  @include mq{
+    width: vwt(600);
+    margin-inline: auto;
+    // table-layout: fixed;
+  }
+  @include mq(lg){
+    width: px2Rem(600);
+  }
+  th,
+  td {
+    border: 1px solid $color-line;
+    padding: vw(7);
+    text-align: center;
+    word-break: break-word;
+    vertical-align: middle;
+    font-size: vw(16);
+    @include mq{
+      font-size: vwt(18);
+      padding: vwt(21);
+    }
+    @include mq(lg){
+      font-size: px2Rem(18);
+      padding: px2Rem(21);
+
+    }
+  }
+  th {
+    background-color: #f4f4f4;
+    font-weight: normal;
+  }
+  td {
+    &:first-child {
+      width: vw(114);
+      @include mq{
+      width: vwt(141);
+      }
+      @include mq(lg){
+        width: px2Rem(141);
+        }
+    }
+  }
+}
+
+
