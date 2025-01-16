@@ -1,8 +1,8 @@
 $(function(){
 
+//-----------------------------------------------------
   //ハンバーガーメニュー
-  //--------------------------------------------
-
+//-----------------------------------------------------
 
   //ハンバーガーボタンを $triggerに格納
   const $trigger = $('#hamburger');
@@ -45,10 +45,36 @@ $(function(){
       //スマホレイアウトの初期状態にリセット
       $trigger.attr('aria-expanded',false).attr('aria-label','メニューを開く');
       $gnav.attr('aria-hidden',true).hide();
+        //gnav__itemがクリックされた時の挙動
+  $('.gnav__item a').on('click', function () {
+    // ハンバーガーメニューを閉じる
+    $trigger.attr('aria-expanded', false).attr('aria-label', 'メニューを開く');
+    $gnav.attr('aria-hidden', true).slideUp();
+  });
     }
   }
   point_header.addListener(checkBreakPoint);
 
+
+//-----------------------------------------------------
+  //スムーススクロール
+//-----------------------------------------------------
+  // #で始まるアンカーをクリックした場合に処理
+  $('a[href^="#"]').click(function(){
+    // 移動先を50px上にずらす
+    var adjust = 50;
+    // スクロールの速度
+    var speed = 400; // ミリ秒
+    // アンカーの値取得
+    var href= $(this).attr("href");
+    // 移動先を取得
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    // 移動先を調整
+    var position = target.offset().top - adjust;
+    // スムーススクロール
+    $('body,html').animate({scrollTop:position}, speed, 'swing');
+    return false;
+  });
 });
 
 
