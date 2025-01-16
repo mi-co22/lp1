@@ -24,7 +24,7 @@ $breakpoint-md: 768;
 $breakpoint-lg: $pc-content-width;
 
 // 本番用か否か
-$production: 0; //0の場合はpxで出力本番用の場合は1にする。
+$production: 1; //0の場合はpxで出力本番用の場合は1にする。
 //-----------------------------------------------------
 //  scss: ブレークポイント関数
 //-----------------------------------------------------
@@ -313,13 +313,181 @@ img {
     }
   }
 }
-.test{
-  margin-top: 500px;
-  font-size: vw(20);
-  @include mq(){
-    font-size: vwt(40);
+
+//-----------------------------------------------------
+// レイアウト
+//-----------------------------------------------------
+.main {
+  padding: 0 vw(16);
+  margin-inline: auto;
+  // @include mq{
+  //     padding: 0 vw(16);
+
+  // }
+  &__container {
+    padding: vw(64) 0;
+    @include mq {
+      max-width: vwt(1200);
+      padding: 0 vwt(20);
+      margin-inline: auto;
+    }
+    @include mq(lg) {
+      max-width: px2Rem(1200);
+      padding: 0 px2Rem(20);
+    }
+  }
+  &__section {
+
+    @include mq {
+      padding: vwt(72) 0;
+    }
+    @include mq(lg) {
+      padding: px2Rem(72) 0;
+    }
+  }
+}
+
+.section{
+  &--other{
+    margin: 0 calc(50% - 50vw);
+    width: 100vw;
+    &__container{
+      @include mq{
+        display: flex;
+
+      }
+    }
+  }
+}
+
+
+
+
+//-----------------------------------------------------
+// メインビジュアル
+//-----------------------------------------------------
+.mainvisual{
+  @include mq{
+    background: url(/assets/image/mainVIsual_pc.jpg)center center /
+    cover no-repeat;
+    width:100%;
+    height: vwt(650);
+    margin-top: vwt(100);
   }
   @include mq(lg){
-    font-size: px2Rem(40);
+    height: px2Rem(650);
+    margin-top: px2Rem(100);
+
+  }
+  &__container{
+
+    @include mq{
+      max-width: vwt(1200);
+      margin-inline: auto;
+      padding: vwt(104) vwt(20) vwt(141);
+    }
+    @include mq(lg){
+      max-width: px2Rem(1200);
+      padding: px2Rem(104) px2Rem(20) vpx2Remt(141);
+    }
+  }
+  &__icon{
+    text-align: center;
+    line-height: 1;
+    background: url(/assets/image/mainVIsual_bg.png) center center /
+        contain no-repeat;
+    @include mq{
+      width: vwt(326);
+      padding: vwt(37) 0;
+      margin-bottom: vwt(32);
+    }
+    @include mq(lg){
+      width: px2Rem(326);
+      padding: px2Rem(37) 0;
+      margin-bottom: px2Rem(32);
+    }
+  }
+  &__icon-text{
+    @include mq{
+      font-size:vwt(20);
+    }
+    @include mq(lg){
+      font-size:px2Rem(20);
+
+    }
+  }
+  &__icon-number{
+    color: $color-attention;
+    font-style: italic;
+    font-weight: 900;
+    @include mq{
+      font-size:vwt(54);
+    }
+    @include mq(lg){
+      font-size:px2Rem(54);
+
+    }
+  }
+  &__text{
+    @include mq{
+      font-size:vwt(33);
+    }
+    @include mq(lg){
+      font-size:px2Rem(33);
+
+    }
+  }
+  &__title{
+    color: $color-main;
+    font-weight: 900;
+    @include mq{
+      font-size:vwt(60);
+    }
+    @include mq(lg){
+      font-size:px2Rem(60);
+
+    }
+  }
+}
+
+.card{
+
+    color: $color-contrast;
+    font-weight: bold;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-size: vw(22);
+    @include mq{
+    width: 50%;
+    font-size: vwt(32);
+    }
+    @include mq(lg){
+    font-size: px2Rem(32);
+
+    // }
+    }
+    // &__image{
+    //   transition: .4s;
+    // }
+  &:hover{
+    opacity: 1;
+    .card__image-wrapper{
+      transform: scale(1.2);
+    }
+  }
+
+  &__image-wrapper{
+    transition: .4s;
+  }
+  &__text{
+    position: absolute;
+    top: 50%;
+    left: vw(16);
+    transform: translateY(-50%);
+    @include mq{
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 }

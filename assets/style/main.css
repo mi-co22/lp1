@@ -34,18 +34,18 @@ img {
   top: 0;
   z-index: 1000;
   width: 100%;
-  height: 70px;
+  height: 18.6666666667vw;
   background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 @media screen and (min-width: 768px) {
   .header {
-    height: 100px;
+    height: 8.3333333333vw;
   }
 }
 @media screen and (min-width: 1200px) {
   .header {
-    height: 100px;
+    height: 6.25rem;
   }
 }
 .header__container {
@@ -55,32 +55,32 @@ img {
 }
 @media screen and (min-width: 768px) {
   .header__container {
-    max-width: 1200px;
+    max-width: 100vw;
     margin-inline: auto;
-    padding: 0 20px;
+    padding: 0 1.6666666667vw;
     height: 100%;
   }
 }
 @media screen and (min-width: 1200px) {
   .header__container {
-    max-width: 1200px;
-    padding: 0 20px;
+    max-width: 75rem;
+    padding: 0 1.25rem;
   }
 }
 .header__logo {
   flex-shrink: 0;
-  margin-left: 16px;
-  width: 166px;
+  margin-left: 4.2666666667vw;
+  width: 44.2666666667vw;
 }
 @media screen and (min-width: 768px) {
   .header__logo {
-    width: 240px;
+    width: 20vw;
     margin-left: 0;
   }
 }
 @media screen and (min-width: 1200px) {
   .header__logo {
-    width: 240px;
+    width: 15rem;
   }
 }
 
@@ -88,8 +88,8 @@ img {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70px;
-  height: 70px;
+  width: 18.6666666667vw;
+  height: 18.6666666667vw;
   border: 0;
   background: #005bac;
   cursor: pointer;
@@ -101,25 +101,25 @@ img {
 }
 .hamburger__line {
   position: relative;
-  width: 30px;
-  height: 5px;
+  width: 8vw;
+  height: 1.3333333333vw;
   background: #fff;
 }
 .hamburger__line::before, .hamburger__line::after {
   position: absolute;
   content: "";
   display: block;
-  width: 30px;
-  height: 5px;
+  width: 8vw;
+  height: 1.3333333333vw;
   background: #fff;
   transition: transform 0.3s;
 }
 .hamburger__line::before {
-  top: -10px;
-  height: 5px;
+  top: -2.6666666667vw;
+  height: 1.3333333333vw;
 }
 .hamburger__line::after {
-  bottom: -10px;
+  bottom: -2.6666666667vw;
 }
 
 /*閉じる*/
@@ -140,12 +140,12 @@ img {
   flex-direction: column;
   position: absolute;
   left: 0;
-  top: 70px;
+  top: 18.6666666667vw;
   width: 100%;
   background: #005bac;
   overflow-y: auto;
   color: #fff;
-  font-size: 18px;
+  font-size: 4.8vw;
   line-height: 1.4444444444;
 }
 @media screen and (min-width: 768px) {
@@ -161,24 +161,24 @@ img {
   }
 }
 .gnav__list {
-  padding: 22px 20px;
+  padding: 5.8666666667vw 5.3333333333vw;
 }
 @media screen and (min-width: 768px) {
   .gnav__list {
     display: flex;
     padding: 0;
-    margin-right: 23px;
+    margin-right: 1.9166666667vw;
   }
 }
 @media screen and (min-width: 1200px) {
   .gnav__list {
-    margin-right: 23px;
+    margin-right: 1.4375rem;
   }
 }
 .gnav__item {
   border-bottom: 1px solid #707070;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+  padding-bottom: 5.3333333333vw;
+  margin-bottom: 5.3333333333vw;
 }
 .gnav__item:last-child {
   margin-bottom: 0;
@@ -192,7 +192,7 @@ img {
 }
 .gnav__link {
   display: block;
-  padding-left: 26px;
+  padding-left: 6.9333333333vw;
   position: relative;
 }
 @media screen and (min-width: 768px) {
@@ -200,15 +200,15 @@ img {
     color: inherit;
     font-weight: 500;
     display: block;
-    padding: 24px;
-    font-size: 20px;
+    padding: 2vw;
+    font-size: 1.6666666667vw;
     line-height: 1.8;
   }
 }
 @media screen and (min-width: 1200px) {
   .gnav__link {
-    padding: 24px;
-    font-size: 20px;
+    padding: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 .gnav__link::before {
@@ -218,8 +218,8 @@ img {
   transform: translateY(-63%);
   display: block;
   content: "";
-  width: 14px;
-  height: 14px;
+  width: 3.7333333333vw;
+  height: 3.7333333333vw;
   background: url(/assets/image/icon_arrow-right.svg) center center/contain no-repeat;
 }
 @media screen and (min-width: 768px) {
@@ -228,7 +228,7 @@ img {
   }
 }
 .gnav__button {
-  padding: 6px 20px 32px;
+  padding: 1.6vw 5.3333333333vw 8.5333333333vw;
 }
 @media screen and (min-width: 768px) {
   .gnav__button {
@@ -236,17 +236,180 @@ img {
   }
 }
 
-.test {
-  margin-top: 500px;
-  font-size: 20px;
+.main {
+  padding: 0 4.2666666667vw;
+  margin-inline: auto;
+}
+.main__container {
+  padding: 17.0666666667vw 0;
 }
 @media screen and (min-width: 768px) {
-  .test {
-    font-size: 40px;
+  .main__container {
+    max-width: 100vw;
+    padding: 0 1.6666666667vw;
+    margin-inline: auto;
   }
 }
 @media screen and (min-width: 1200px) {
-  .test {
-    font-size: 40px;
+  .main__container {
+    max-width: 75rem;
+    padding: 0 1.25rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .main__section {
+    padding: 6vw 0;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .main__section {
+    padding: 4.5rem 0;
+  }
+}
+
+.section--other {
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+}
+@media screen and (min-width: 768px) {
+  .section--other__container {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .mainvisual {
+    background: url(/assets/image/mainVIsual_pc.jpg) center center/cover no-repeat;
+    width: 100%;
+    height: 54.1666666667vw;
+    margin-top: 8.3333333333vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mainvisual {
+    height: 40.625rem;
+    margin-top: 6.25rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mainvisual__container {
+    max-width: 100vw;
+    margin-inline: auto;
+    padding: 8.6666666667vw 1.6666666667vw 11.75vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mainvisual__container {
+    max-width: 75rem;
+    padding: 6.5rem 1.25rem vpx2Remt(141);
+  }
+}
+.mainvisual__icon {
+  text-align: center;
+  line-height: 1;
+  background: url(/assets/image/mainVIsual_bg.png) center center/contain no-repeat;
+}
+@media screen and (min-width: 768px) {
+  .mainvisual__icon {
+    width: 27.1666666667vw;
+    padding: 3.0833333333vw 0;
+    margin-bottom: 2.6666666667vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mainvisual__icon {
+    width: 20.375rem;
+    padding: 2.3125rem 0;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mainvisual__icon-text {
+    font-size: 1.6666666667vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mainvisual__icon-text {
+    font-size: 1.25rem;
+  }
+}
+.mainvisual__icon-number {
+  color: #f11f8d;
+  font-style: italic;
+  font-weight: 900;
+}
+@media screen and (min-width: 768px) {
+  .mainvisual__icon-number {
+    font-size: 4.5vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mainvisual__icon-number {
+    font-size: 3.375rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .mainvisual__text {
+    font-size: 2.75vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mainvisual__text {
+    font-size: 2.0625rem;
+  }
+}
+.mainvisual__title {
+  color: #005bac;
+  font-weight: 900;
+}
+@media screen and (min-width: 768px) {
+  .mainvisual__title {
+    font-size: 5vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .mainvisual__title {
+    font-size: 3.75rem;
+  }
+}
+
+.card {
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  font-size: 5.8666666667vw;
+}
+@media screen and (min-width: 768px) {
+  .card {
+    width: 50%;
+    font-size: 2.6666666667vw;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .card {
+    font-size: 2rem;
+  }
+}
+.card:hover {
+  opacity: 1;
+}
+.card:hover .card__image-wrapper {
+  transform: scale(1.2);
+}
+.card__image-wrapper {
+  transition: 0.4s;
+}
+.card__text {
+  position: absolute;
+  top: 50%;
+  left: 4.2666666667vw;
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 768px) {
+  .card__text {
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
