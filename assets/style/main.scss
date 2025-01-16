@@ -320,10 +320,6 @@ img {
 .main {
   padding: 0 vw(16);
   margin-inline: auto;
-  // @include mq{
-  //     padding: 0 vw(16);
-
-  // }
   &__container {
     padding: vw(64) 0;
     @include mq {
@@ -360,7 +356,29 @@ img {
   }
 }
 
-
+.footer{
+  padding:vw(32) vw(16);
+  margin-inline: auto;
+  background: #DDDDDD;
+  text-align:center;
+  @include mq{
+  padding:vwt(50) vwt(20);
+  }
+  @include mq(lg){
+    padding:px2Rem(50) px2Rem(20);
+    font-size: px2Rem(13);
+    }
+  &__copyright{
+    font-size: vw(13);
+    @include lineheight(13,28);
+    @include mq{
+      font-size: vwt(13);
+      }
+      @include mq(lg){
+        font-size: px2Rem(13);
+        }
+  }
+}
 
 
 //-----------------------------------------------------
@@ -449,7 +467,9 @@ img {
     }
   }
 }
-
+//-----------------------------------------------------
+// コンポーネント
+//-----------------------------------------------------
 .card{
 
     color: $color-contrast;
@@ -489,5 +509,153 @@ img {
       left: 50%;
       transform: translate(-50%, -50%);
     }
+  }
+}
+
+.cta {
+  background: rgba(255, 85, 85, 0.1);
+  margin: 0 calc(50% - 50vw);
+  width: 100vw;
+  &__container {
+    padding: vw(40) vw(16);
+    @include mq {
+      padding: vwt(55) vwt(20);
+    }
+    @include mq(lg) {
+      padding: px2Rem(55) px2Rem(20);
+    }
+  }
+  &__text {
+    text-align: center;
+    margin-bottom: vw(12);
+    @include mq {
+      margin-bottom: vwt(12);
+    }
+    @include mq(lg) {
+      margin-bottom: px2Rem(12);
+    }
+  }
+  &__button {
+    width: vw(305);
+    // @include mq {
+    //   margin-bottom: vwt(12);
+    // }
+    // @include mq(lg) {
+    //   margin-bottom: px2Rem(12);
+    // }
+  }
+}
+.button {
+  display: block;
+  margin-inline: auto;
+  padding: vw(21) vw(41);
+  border-radius: 2em;
+  text-align: center;
+  text-decoration: none;
+  color: $color-contrast;
+  font-weight: bold;
+  font-size: vw(18);
+  @include lineheight(18, 26);
+  @include mq {
+    padding: vwt(19) vwt(41);
+    font-size: vwt(24);
+    @include lineheight(24, 36);
+  }
+  @include mq(lg) {
+    padding: px2Rem(19) px2Rem(41);
+    font-size: px2Rem(24);
+  }
+  &--small {
+    font-size: vw(16);
+    width: vw(250);
+    @include lineheight(16, 36);
+    padding: vw(6) vw(41);
+    @include mq {
+      width: vwt(230);
+    }
+    @include mq(lg) {
+      min-width: px2Rem(340);
+      font-size: px2Rem(24);
+      @include lineheight(18, 26);
+      padding: px2Rem(19) px2Rem(41);
+    }
+    // @include mq(md) {
+    //   min-width: px2Rem(340);
+    //   font-size: px2Rem(24);
+    //   @include lineheight(18, 26);
+    //   padding: px2Rem(19) px2Rem(41);
+    // }
+  }
+  &--large {
+    max-width: vw(350);
+    font-size: vw(18);
+    padding: vw(20) vw(41);
+    background: $color-contrast;
+    color: $color-main;
+    @include mq(md) {
+      color: $color-contrast;
+      font-size: px2Rem(20);
+      @include lineheight(20, 36);
+      min-width: px2Rem(200);
+      background-image: linear-gradient(
+        90deg,
+        rgba(2, 113, 224, 1),
+        rgba(83, 162, 240, 1)
+      );
+      padding: px2Rem(12) px2Rem(41);
+    }
+    @include mq {
+      color: $color-contrast;
+      font-size: vwt(20);
+      @include lineheight(20, 36);
+      min-width: vwt(200);
+      background-image: linear-gradient(
+        90deg,
+        rgba(2, 113, 224, 1),
+        rgba(83, 162, 240, 1)
+      );
+      padding: vwt(12) vwt(41);
+    }
+    @include mq(lg) {
+      color: $color-contrast;
+      font-size: px2Rem(20);
+      @include lineheight(20, 36);
+      min-width: px2Rem(200);
+      background-image: linear-gradient(
+        90deg,
+        rgba(2, 113, 224, 1),
+        rgba(83, 162, 240, 1)
+      );
+      padding: px2Rem(12) px2Rem(41);
+    }
+  }
+  &--main {
+    font-size: vw(20);
+    width: vw(305);
+
+    color: $color-contrast;
+    background-image: linear-gradient(
+      90deg,
+      rgba(2, 113, 224, 1),
+      rgba(83, 162, 240, 1)
+    );
+    @include mq{
+      font-size: vwt(24);
+      @include lineheight(24, 36);
+      width: vwt(360);
+    }
+    @include mq(lg) {
+      width: px2Rem(360);
+      font-size: px2Rem(24);
+    }
+  }
+  &--warning {
+    background: $color-warning;
+  }
+  &--alert {
+    background: $color-alert;
+  }
+  &--success {
+    background: $color-success;
   }
 }
