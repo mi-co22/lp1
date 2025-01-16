@@ -1,134 +1,137 @@
 $(function(){
-
-//-----------------------------------------------------
-  //ハンバーガーメニュー
-//-----------------------------------------------------
-
-  //ハンバーガーボタンを $triggerに格納
+  //-----------------------------------------------------
+  // ハンバーガーメニュー
+  //-----------------------------------------------------
   const $trigger = $('#hamburger');
-  //グロナビを $gnavに格納
   const $gnav = $('#gnav');
-  //ヘッダーのブレイクポイントを point_headerに格納
   const point_header = window.matchMedia('screen and (min-width: 768px)');
+  const headerHeight = $('header').outerHeight() || 0; // ヘッダーの高さを取得
 
-  //ハンバーガーメニューボタンがクリックされた時
-  $trigger.on('click',function(){
-    //aria-expandedの値を変数expandedに格納
+  $trigger.on('click', function () {
     const expanded = $(this).attr('aria-expanded');
-
-    //もし expanded が 'false'だったら（メニューが非表示・開く操作）
-    //【重要】ariaの値はbooleanではなく文字列なので評価式の記述が変わります
-    if(expanded === 'false'){
-      //対象メニューの展開ステートをtrueにし、labelを「閉じる」に変更
-      $(this).attr('aria-expanded',true).attr('aria-label','メニューを閉じる');
-      //メニューのhiddenステートをfalseにしてメニューを表示
-      // $gnav.attr('aria-hidden',false).slideDown();
-      $gnav.attr('aria-hidden', false).css('display', 'flex').hide().slideDown();
-
-    //もし expanded が 'true'だったら（メニューが展開済・閉じる操作）
-    }else {
-      //対象メニューの展開ステートをfalseにし、labelを「開く」に変更
-      $(this).attr('aria-expanded',false).attr('aria-label','メニューを開く');
-      //メニューのhiddenステートをtrueにしてメニューを閉じる
-      $gnav.attr('aria-hidden',true).slideUp();
+    if (expanded === 'false') {
+      $(this).attr('aria-expanded', true).attr('aria-label', 'メニューを閉じる');
+      $gnav
+        .attr('aria-hidden', false)
+        .css({ display: 'flex', overflow: 'hidden' })
+        .hide()
+        .stop(true, true)
+        .slideDown();
+    } else {
+      $(this).attr('aria-expanded', false).attr('aria-label', 'メニューを開く');
+      $gnav.attr('aria-hidden', true).stop(true, true).slideUp();
     }
   });
 
-  //ブレイクポイントをまたいだときの挙動
-  //今回のグロナビはPC/SPソース共有なので、ブレイクポイントをまたいだ時にaria属性も動的に設定する必要がある。ハンバーガーはSPレイアウト時しか表示されないので992px以上の場合の処理は不要
-  function checkBreakPoint() {
-    //もし992px以上だったら
-    if (point_header.matches) {
-      //グロナビを表示
-      $gnav.attr('aria-hidden',false).show();
-    }else {
-      //スマホレイアウトの初期状態にリセット
-      $trigger.attr('aria-expanded',false).attr('aria-label','メニューを開く');
-      $gnav.attr('aria-hidden',true).hide();
-        //gnav__itemがクリックされた時の挙動
   $('.gnav__item a').on('click', function () {
-    // ハンバーガーメニューを閉じる
-    $trigger.attr('aria-expanded', false).attr('aria-label', 'メニューを開く');
-    $gnav.attr('aria-hidden', true).slideUp();
+    if (!point_header.matches) {
+      $trigger.attr('aria-expanded', false).attr('aria-label', 'メニューを開く');
+      $gnav.attr('aria-hidden', true).stop(true, true).slideUp();
+    }
   });
+
+  function checkBreakPoint() {
+    if (point_header.matches) {
+      $gnav.attr('aria-hidden', false).css('display', 'flex');
+      $trigger.attr('aria-expanded', false).attr('aria-label', 'メニューを開く');
+    } else {
+      $trigger.attr('aria-expanded', false).attr('aria-label', 'メニューを開く');
+      $gnav.attr('aria-hidden', true).hide();
     }
   }
+
   point_header.addListener(checkBreakPoint);
+  checkBreakPoint();
 
+  //-----------------------------------------------------
+  // スムーススクロール
+  //-----------------------------------------------------
+  $('a[href^="#"]').on('click', function (event) {
+    const href = $(this).attr('href');
+    if (href === '#' || href === '') return;
 
-//-----------------------------------------------------
-  //スムーススクロール
-//-----------------------------------------------------
-  // #で始まるアンカーをクリックした場合に処理
-  $('a[href^="#"]').click(function(){
-    // 移動先を50px上にずらす
-    var adjust = 50;
-    // スクロールの速度
-    var speed = 400; // ミリ秒
-    // アンカーの値取得
-    var href= $(this).attr("href");
-    // 移動先を取得
-    var target = $(href == "#" || href == "" ? 'html' : href);
-    // 移動先を調整
-    var position = target.offset().top - adjust;
-    // スムーススクロール
-    $('body,html').animate({scrollTop:position}, speed, 'swing');
-    return false;
+    const target = $(href === '#' ? 'html' : href);
+    const adjust = headerHeight; // ヘッダーの高さ分を調整
+    const speed = 400;
+    const position = target.offset().top - adjust;
+
+    $('html, body')
+      .stop(true, true)
+      .animate(
+        { scrollTop: position },
+        {
+          duration: speed,
+          easing: 'swing',
+          complete: function () {
+            if (!point_header.matches) {
+              $trigger.attr('aria-expanded', false).attr('aria-label', 'メニューを開く');
+              $gnav.attr('aria-hidden', true).stop(true, true).slideUp();
+            }
+          },
+        }
+      );
+
+    event.preventDefault();
   });
-});
 
 
+    //-----------------------------------------------------
+  // タブ
+  //-----------------------------------------------------
 
-const tabs = document.querySelectorAll('.js-tab')
-function tabSwitch(){
-  let tabsArray = Array.prototype.slice.call(tabs);
-  let index = tabsArray.indexOf(this);
-  const resetTab = function(){
-    document.querySelector('.js-tab.is-active').classList.remove('is-active');
-    document.querySelector('.js-tab[aria-selected=true]').removeAttribute('aria-selected');
-    document.querySelectorAll('.js-tab').forEach((elm)=>{
-      elm.tabIndex = -1;
-    });
-    document.querySelector('.js-tab__panel.is-active').classList.remove('is-active');
-  }
-  const setTab = function(tab,tabpanel) {
-    tab.classList.add('is-active');
-    tab.tabIndex = 0;
-    tab.setAttribute('aria-selected',true);
-    tabpanel.classList.add('is-active');
-  }
-  if (event.type == 'keyup') {
-    if(event.key === 'ArrowRight') {
-      if(tabsArray[index + 1]) {
-        tabsArray[index + 1].focus();
+const $tabs = $('.js-tab');
+
+function tabSwitch(event) {
+  let $tabsArray = $tabs.toArray();
+  let index = $tabsArray.indexOf(this);
+  
+  const resetTab = function() {
+    $('.js-tab.is-active').removeClass('is-active');
+    $('.js-tab[aria-selected=true]').removeAttr('aria-selected');
+    $tabs.attr('tabindex', -1);
+    $('.js-tab__panel.is-active').removeClass('is-active');
+  };
+
+  const setTab = function(tab, tabpanel) {
+    $(tab).addClass('is-active');
+    $(tab).attr('tabindex', 0);
+    $(tab).attr('aria-selected', true);
+    $(tabpanel).addClass('is-active');
+  };
+
+  if (event.type === 'keyup') {
+    if (event.key === 'ArrowRight') {
+      if ($tabsArray[index + 1]) {
+        $($tabsArray[index + 1]).focus();
         resetTab();
-        setTab(tabsArray[index + 1],document.querySelectorAll('.js-tab__panel')[index + 1]);
-        } else {
-         tabsArray[0].focus();
-         resetTab();
-         setTab(tabsArray[0], document.querySelectorAll('.js-tab__panel')[0]);
-        };
-      };
-    if(event.key === 'ArrowLeft') {
-      if(tabsArray[index - 1]) {
-         tabsArray[index - 1].focus();
-         resetTab();
-         setTab(tabsArray[index - 1], document.querySelectorAll('.js-tab__panel')[index - 1])
-        } else {
-         let lastTab =  tabsArray.pop();
-         lastTab.focus();
-         resetTab();
-         setTab(lastTab, Array.prototype.slice.call(document.querySelectorAll('.js-tab__panel')).pop());
-        };
-      };
+        setTab($tabsArray[index + 1], $('.js-tab__panel').eq(index + 1));
+      } else {
+        $($tabsArray[0]).focus();
+        resetTab();
+        setTab($tabsArray[0], $('.js-tab__panel').eq(0));
+      }
+    }
+    if (event.key === 'ArrowLeft') {
+      if ($tabsArray[index - 1]) {
+        $($tabsArray[index - 1]).focus();
+        resetTab();
+        setTab($tabsArray[index - 1], $('.js-tab__panel').eq(index - 1));
+      } else {
+        let lastTab = $tabsArray.pop();
+        $(lastTab).focus();
+        resetTab();
+        setTab(lastTab, $('.js-tab__panel').last());
+      }
+    }
   }
-	if (event.type == 'click')　{
-    resetTab();
-    setTab(this, document.querySelectorAll('.js-tab__panel')[index]);
-  }
-};
 
-tabs.forEach((tab)=>{
-  tab.addEventListener('click',tabSwitch);
-  tab.addEventListener('keyup',tabSwitch);
+  if (event.type === 'click') {
+    resetTab();
+    setTab(this, $('.js-tab__panel').eq(index));
+  }
+}
+
+$tabs.on('click keyup', tabSwitch);
 });
+
+
