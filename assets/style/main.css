@@ -308,7 +308,7 @@ img {
 .footer {
   padding: 8.5333333333vw 4.2666666667vw;
   margin-inline: auto;
-  background: #dddddd;
+  background: #ddd;
   text-align: center;
   letter-spacing: 0.03em;
 }
@@ -1106,14 +1106,14 @@ table td {
 }
 @media screen and (min-width: 768px) {
   table th,
-  table td {
+table td {
     font-size: 1.5vw;
     padding: 1.6666666667vw;
   }
 }
 @media screen and (min-width: 1200px) {
   table th,
-  table td {
+table td {
     font-size: 1.125rem;
     padding: 1.25rem;
   }
@@ -1134,4 +1134,5 @@ table td:first-child {
   table td:first-child {
     width: 8.8125rem;
   }
-}/*# sourceMappingURL=main.css.map */
+}
+/*# sourceMappingURL=main.css.map */

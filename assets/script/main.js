@@ -1,4 +1,4 @@
-$(function(){
+$(function () {
   //-----------------------------------------------------
   // ハンバーガーメニュー
   //-----------------------------------------------------
@@ -79,59 +79,59 @@ $(function(){
   // タブ
   //-----------------------------------------------------
 
-const $tabs = $('.js-tab');
+  const $tabs = $('.js-tab');
 
-function tabSwitch(event) {
-  let $tabsArray = $tabs.toArray();
-  let index = $tabsArray.indexOf(this);
-  
-  const resetTab = function() {
-    $('.js-tab.is-active').removeClass('is-active');
-    $('.js-tab[aria-selected=true]').removeAttr('aria-selected');
-    $tabs.attr('tabindex', -1);
-    $('.js-tab__panel.is-active').removeClass('is-active');
-  };
+  function tabSwitch(event) {
+    let $tabsArray = $tabs.toArray();
+    let index = $tabsArray.indexOf(this);
 
-  const setTab = function(tab, tabpanel) {
-    $(tab).addClass('is-active');
-    $(tab).attr('tabindex', 0);
-    $(tab).attr('aria-selected', true);
-    $(tabpanel).addClass('is-active');
-  };
+    const resetTab = function () {
+      $('.js-tab.is-active').removeClass('is-active');
+      $('.js-tab[aria-selected=true]').removeAttr('aria-selected');
+      $tabs.attr('tabindex', -1);
+      $('.js-tab__panel.is-active').removeClass('is-active');
+    };
 
-  if (event.type === 'keyup') {
-    if (event.key === 'ArrowRight') {
-      if ($tabsArray[index + 1]) {
-        $($tabsArray[index + 1]).focus();
-        resetTab();
-        setTab($tabsArray[index + 1], $('.js-tab__panel').eq(index + 1));
-      } else {
-        $($tabsArray[0]).focus();
-        resetTab();
-        setTab($tabsArray[0], $('.js-tab__panel').eq(0));
+    const setTab = function (tab, tabpanel) {
+      $(tab).addClass('is-active');
+      $(tab).attr('tabindex', 0);
+      $(tab).attr('aria-selected', true);
+      $(tabpanel).addClass('is-active');
+    };
+
+    if (event.type === 'keyup') {
+      if (event.key === 'ArrowRight') {
+        if ($tabsArray[index + 1]) {
+          $($tabsArray[index + 1]).focus();
+          resetTab();
+          setTab($tabsArray[index + 1], $('.js-tab__panel').eq(index + 1));
+        } else {
+          $($tabsArray[0]).focus();
+          resetTab();
+          setTab($tabsArray[0], $('.js-tab__panel').eq(0));
+        }
+      }
+      if (event.key === 'ArrowLeft') {
+        if ($tabsArray[index - 1]) {
+          $($tabsArray[index - 1]).focus();
+          resetTab();
+          setTab($tabsArray[index - 1], $('.js-tab__panel').eq(index - 1));
+        } else {
+          let lastTab = $tabsArray.pop();
+          $(lastTab).focus();
+          resetTab();
+          setTab(lastTab, $('.js-tab__panel').last());
+        }
       }
     }
-    if (event.key === 'ArrowLeft') {
-      if ($tabsArray[index - 1]) {
-        $($tabsArray[index - 1]).focus();
-        resetTab();
-        setTab($tabsArray[index - 1], $('.js-tab__panel').eq(index - 1));
-      } else {
-        let lastTab = $tabsArray.pop();
-        $(lastTab).focus();
-        resetTab();
-        setTab(lastTab, $('.js-tab__panel').last());
-      }
+
+    if (event.type === 'click') {
+      resetTab();
+      setTab(this, $('.js-tab__panel').eq(index));
     }
   }
 
-  if (event.type === 'click') {
-    resetTab();
-    setTab(this, $('.js-tab__panel').eq(index));
-  }
-}
-
-$tabs.on('click keyup', tabSwitch);
+  $tabs.on('click keyup', tabSwitch);
 });
 
 
