@@ -84,9 +84,6 @@ $breakpoints: (
 //-----------------------------------------------------
 body {
   color: $color-normal;
-  // font-family: "Poppins", "Roboto", "Avenir", "Helvetica Neue", "Helvetica",
-  //   "Arial", "Noto Sans JP", "Hiragino Sans", "ヒラギノ角ゴシック", YuGothic,
-  //   "Yu Gothic", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", serif;
   font-family: 'Noto Sans JP', 'Helvetica Neue', arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', 'BIZ UDPGothic',
   meiryo, sans-serif;
   line-height: 1.75;
@@ -242,7 +239,6 @@ img {
   color: $color-contrast;
   font-size: vw(18);
   @include lineheight(18, 26);
-
   @include mq {
     display: flex;
     align-items: center;
@@ -253,7 +249,6 @@ img {
     color: $color-normal;
     background: none;
   }
-
   &__list {
     padding: vw(22) vw(20);
 
@@ -549,8 +544,6 @@ img {
   }
   @include mq(lg) {
     font-size: px2Rem(32);
-
-    // }
   }
   &:hover {
     opacity: 1;
@@ -945,9 +938,7 @@ img {
       margin-right: 0;
     }
   }
-  /* 共通のコンテナスタイル */
   &__image {
-    // transition: 0.4s;
     margin-bottom: vw(16);
     border-radius: 12px;
     overflow: hidden;
@@ -980,7 +971,6 @@ table {
   @include mq {
     width: vwt(600);
     margin-inline: auto;
-    // table-layout: fixed;
   }
   @include mq(lg) {
     width: px2Rem(600);
