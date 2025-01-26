@@ -350,7 +350,137 @@ img {
     padding: 0 vw(16);
     margin-inline: auto;
 
+    // &__container {
+    //     padding: vw(64) 0;
+
+    //     @include mq {
+    //         max-width: vwt(1200);
+    //         padding: 0 vwt(20);
+    //         margin-inline: auto;
+    //     }
+
+    //     @include mq(lg) {
+    //         max-width: px2Rem(1200);
+    //         padding: 0 px2Rem(20);
+    //     }
+    // }
+
+    // &__section {
+    //     @include mq {
+    //         padding: vwt(72) 0;
+    //     }
+
+    //     @include mq(lg) {
+    //         padding: px2Rem(72) 0;
+    //     }
+
+    //     &--fix {
+    //         margin-top: vw(-50);
+    //         margin-bottom: vw(-31);
+
+    //         @include mq {
+    //             margin-top: 0;
+    //             margin-bottom: 0;
+
+    //             padding-top: vwt(43);
+    //         }
+
+    //         @include mq(lg) {
+    //             padding-top: px2Rem(43);
+    //         }
+    //     }
+    // }
+}
+
+.reason{
+    margin-top: vw(-50);
+    margin-bottom: vw(-31);
+        @include mq {
+            padding: vwt(43) 0 vwt(72);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        @include mq(lg) {
+            padding: px2Rem(72) 0;
+            padding: px2Rem(43) 0 px2Rem(72);
+        }
+
     &__container {
+        padding: vw(64) 0;
+
+        @include mq {
+            max-width: vwt(1200);
+            padding: 0 vwt(20);
+            margin-inline: auto;
+        }
+
+        @include mq(lg) {
+            max-width: px2Rem(1200);
+            padding: 0 px2Rem(20);
+        }
+    }
+
+
+}
+.course{
+        @include mq {
+            padding: vwt(72) 0;
+        }
+        @include mq(lg) {
+            padding: px2Rem(72) 0;
+        }
+
+    &__container {
+        padding: vw(64) 0;
+
+        @include mq {
+            max-width: vwt(1200);
+            padding: 0 vwt(20);
+            margin-inline: auto;
+        }
+
+        @include mq(lg) {
+            max-width: px2Rem(1200);
+            padding: 0 px2Rem(20);
+        }
+    }
+
+}
+.price{
+
+        @include mq {
+            padding: vwt(72) 0;
+        }
+
+        @include mq(lg) {
+            padding: px2Rem(72) 0;
+        }
+
+
+        &__container {
+        padding: vw(64) 0;
+
+        @include mq {
+            max-width: vwt(1200);
+            padding: 0 vwt(20);
+            margin-inline: auto;
+        }
+
+        @include mq(lg) {
+            max-width: px2Rem(1200);
+            padding: 0 px2Rem(20);
+        }
+    }
+
+
+}
+.other{
+    margin: 0 calc(50% - 50vw);
+    width: 100vw;
+        &__container {
+            display: flex;
+
         padding: vw(64) 0;
 
         @include mq {
@@ -374,39 +504,10 @@ img {
             padding: px2Rem(72) 0;
         }
 
-        &--fix {
-            margin-top: vw(-50);
-            margin-bottom: vw(-31);
-
-            @include mq {
-                margin-top: 0;
-                margin-bottom: 0;
-
-                padding-top: vwt(43);
-            }
-
-            @include mq(lg) {
-                padding-top: px2Rem(43);
-            }
-        }
     }
 }
 
 
-
-
-.section {
-    &--other {
-        margin: 0 calc(50% - 50vw);
-        width: 100vw;
-
-        &__container {
-            @include mq {
-                display: flex;
-            }
-        }
-    }
-}
 
 .footer {
     padding: vw(32) vw(16);
