@@ -26,10 +26,10 @@
     <body>
         <header class="header">
             <div class="header__container">
-                <h1 class="header__logo">
+                <div class="header__logo">
                     <a href="/"><img src="/assets/image/logo.png" alt="Kira-Kira Juku" width="240" height="45"
                             class="header__logo-image"></a>
-                </h1>
+                </div>
                 <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-controls="gnav" aria-expanded="false">
                     <span class="hamburger__line" aria-hidden="true"></span>
                 </button>
@@ -60,7 +60,7 @@
                         <p class="mainvisual__icon-number">No.<span>1</span></p>
                     </div>
                     <p class="mainvisual__text">現役高校生・高卒生</p>
-                    <h2 class="mainvisual__title">入学説明会の<br>お申し込み開始</h2>
+                    <h1 class="mainvisual__title">入学説明会の<br>お申し込み開始</h1>
                 </div>
             </div>
         </div>
@@ -68,13 +68,13 @@
         <!-- mainvisual__list -->
         <ul class="mainvisual__list">
             <li class="mainvisual__button">
-                <a href="/inquiry/" class="button button--small button--warning">入学のお問い合わせ</a>
+                <a href="/inquiry" class="button button--small button--warning">入学のお問い合わせ</a>
             </li>
             <li class="mainvisual__button">
-                <a href="/freetrial/" class="button button--small button--alert">無料体験に申し込む</a>
+                <a href="/freetrial" class="button button--small button--alert">無料体験に申し込む</a>
             </li>
             <li class="mainvisual__button">
-                <a href="/request/" class="button button--small button--success">資料請求する</a>
+                <a href="/request" class="button button--small button--success">資料請求する</a>
             </li>
         </ul>
         <!-- /.mainvisual__list -->
@@ -86,8 +86,7 @@
                     <div class="media">
                         <picture class="media__image">
                             <source media="(min-width: 768px)" srcset="/assets/image/pht_reason01_pc.jpg" type="image/jpg">
-                            <source media="(max-width: 767px)" srcset="/assets/image/pht_reason01_sp.jpg" type="image/jpg">
-                            <img src="/assets/image/pht_reason01.jpg" alt="" class="picture-img" width="540" height="346">
+                            <img src="/assets/image/pht_reason01_sp.jpg" alt="" class="picture-img" width="540" height="346">
                         </picture>
                         <div class="media__body">
                             <p class="media__number">Point<span>1</span></p>
@@ -100,8 +99,7 @@
                     <div class="media media--reverse">
                         <picture class="media__image">
                             <source media="(min-width: 768px)" srcset="/assets/image/pht_reason02_pc.jpg" type="image/jpg">
-                            <source media="(max-width: 767px)" srcset="/assets/image/pht_reason02_sp.jpg" type="image/jpg">
-                            <img src="/assets/image/pht_reason02.jpg" alt="" class="picture-img" width="540" height="346">
+                            <img src="/assets/image/pht_reason02_sp.jpg" alt="" class="picture-img" width="540" height="346">
                         </picture>
                         <div class="media__body">
                             <p class="media__number">Point<span>2</span></p>
@@ -116,8 +114,7 @@
                     <div class="media">
                         <picture class="media__image">
                             <source media="(min-width: 768px)" srcset="/assets/image/pht_reason03_pc.jpg" type="image/jpg">
-                            <source media="(max-width: 767px)" srcset="/assets/image/pht_reason03_sp.jpg" type="image/jpg">
-                            <img src="/assets/image/pht_reason03.jpg" alt="" class="picture-img" width="540" height="346">
+                            <img src="/assets/image/pht_reason03_sp.jpg" alt="" class="picture-img" width="540" height="346">
                         </picture>
                         <div class="media__body">
                             <p class="media__number">Point<span>3</span></p>
@@ -138,7 +135,7 @@
                     <p class="cta__text">
                         入学ご検討の方は、まずは入学説明会に<br class="sp-block">お越しください
                     </p>
-                    <a href="/entry/" class="cta__button button button--main">入学説明会に申し込む</a>
+                    <a href="/entry" class="cta__button button button--main">入学説明会に申し込む</a>
                 </div>
             </div>
             <!-- /.cta -->
@@ -148,7 +145,7 @@
                     <h2 class="title title--fix">コース・目的</h2>
                     <div class="tab">
                         <div class="tab__list" role="tablist">
-                            <button class="tab__button is-active js-tab" type="button" role="tab" id="tab1" aria-controls="tab__panel1"
+                            <button class="tab__button tab__button--active js-tab" type="button" role="tab" id="tab1" aria-controls="tab__panel1"
                                 aria-selected="true">
                                 学年別から選ぶ
                             </button>
@@ -157,7 +154,7 @@
                                 目的別から選ぶ
                             </button>
                         </div>
-                        <div id="tab__panel1" class="tab__panel js-tab__panel is-active" role="tabpanel" tabindex="0"
+                        <div id="tab__panel1" class="tab__panel js-tab__panel tab__button--active" role="tabpanel" tabindex="0"
                             aria-labelledby="tab1">
                             <div class="tab__item">
                                 <a href="#" class="tab__link">
@@ -165,8 +162,7 @@
                                         <div class="tab__frame">
                                             <picture class="tab__picture">
                                                 <source media="(min-width: 768px)" srcset="/assets/image/pht_cource01_pc.jpg" type="image/jpg">
-                                                <source media="(max-width: 767px)" srcset="/assets/image/pht_cource01_sp.jpg" type="image/jpg">
-                                                <img src="/assets/image/pht_cource01_pc.jpg" alt="" class="picture-img" width="532"
+                                                <img src="/assets/image/pht_cource01_sp.jpg" alt="" class="picture-img" width="532"
                                                     height="329">
                                             </picture>
                                         </div>
@@ -180,8 +176,7 @@
                                         <div class="tab__frame">
                                             <picture class="tab__picture">
                                                 <source media="(min-width: 768px)" srcset="/assets/image/pht_cource02_pc.jpg" type="image/jpg">
-                                                <source media="(max-width: 767px)" srcset="/assets/image/pht_cource02_sp.jpg" type="image/jpg">
-                                                <img src="/assets/image/pht_cource02_pc.jpg" alt="" class="picture-img" width="532"
+                                                <img src="/assets/image/pht_cource02_sp.jpg" alt="" class="picture-img" width="532"
                                                     height="329">
                                             </picture>
                                         </div>
@@ -195,8 +190,7 @@
                                         <div class="tab__frame">
                                             <picture class="tab__picture">
                                                 <source media="(min-width: 768px)" srcset="/assets/image/pht_cource03_pc.jpg" type="image/jpg">
-                                                <source media="(max-width: 767px)" srcset="/assets/image/pht_cource03_sp.jpg" type="image/jpg">
-                                                <img src="/assets/image/pht_cource03_pc.jpg" alt="" class="picture-img" width="532"
+                                                <img src="/assets/image/pht_cource03_sp.jpg" alt="" class="picture-img" width="532"
                                                     height="329">
                                             </picture>
                                         </div>
@@ -210,8 +204,7 @@
                                         <div class="tab__frame">
                                             <picture class="tab__picture">
                                                 <source media="(min-width: 768px)" srcset="/assets/image/pht_cource04_pc.jpg" type="image/jpg">
-                                                <source media="(max-width: 767px)" srcset="/assets/image/pht_cource04_sp.jpg" type="image/jpg">
-                                                <img src="/assets/image/pht_cource04_pc.jpg" alt="" class="picture-img" width="532"
+                                                <img src="/assets/image/pht_cource04_sp.jpg" alt="" class="picture-img" width="532"
                                                     height="329">
                                             </picture>
                                         </div>
@@ -227,8 +220,7 @@
                                         <div class="tab__frame">
                                             <picture class="tab__picture">
                                                 <source media="(min-width: 768px)" srcset="/assets/image/pht_cource05_pc.jpg" type="image/jpg">
-                                                <source media="(max-width: 767px)" srcset="/assets/image/pht_cource05_sp.jpg" type="image/jpg">
-                                                <img src="/assets/image/pht_cource05_pc.jpg" alt="" class="picture-img" width="532"
+                                                <img src="/assets/image/pht_cource05_sp.jpg" alt="" class="picture-img" width="532"
                                                     height="329">
                                             </picture>
                                         </div>
@@ -242,8 +234,7 @@
                                         <div class="tab__frame">
                                             <picture class="tab__picture">
                                                 <source media="(min-width: 768px)" srcset="/assets/image/pht_cource06_pc.jpg" type="image/jpg">
-                                                <source media="(max-width: 767px)" srcset="/assets/image/pht_cource06_sp.jpg" type="image/jpg">
-                                                <img src="/assets/image/pht_cource06_pc.jpg" alt="" class="picture-img" width="532"
+                                                <img src="/assets/image/pht_cource06_sp.jpg" alt="" class="picture-img" width="532"
                                                     height="329">
                                             </picture>
                                         </div>
@@ -257,8 +248,7 @@
                                         <div class="tab__frame">
                                             <picture class="tab__picture">
                                                 <source media="(min-width: 768px)" srcset="/assets/image/pht_cource07_pc.jpg" type="image/jpg">
-                                                <source media="(max-width: 767px)" srcset="/assets/image/pht_cource07_sp.jpg" type="image/jpg">
-                                                <img src="/assets/image/pht_cource07_pc.jpg" alt="" class="picture-img" width="532"
+                                                <img src="/assets/image/pht_cource07_sp.jpg" alt="" class="picture-img" width="532"
                                                     height="329">
                                             </picture>
                                         </div>
@@ -272,8 +262,7 @@
                                         <div class="tab__frame">
                                             <picture class="tab__picture">
                                                 <source media="(min-width: 768px)" srcset="/assets/image/pht_cource08_pc.jpg" type="image/jpg">
-                                                <source media="(max-width: 767px)" srcset="/assets/image/pht_cource08_sp.jpg" type="image/jpg">
-                                                <img src="/assets/image/pht_cource08_pc.jpg" alt="" class="picture-img" width="532"
+                                                <img src="/assets/image/pht_cource08_sp.jpg" alt="" class="picture-img" width="532"
                                                     height="329">
                                             </picture>
                                         </div>
@@ -292,7 +281,7 @@
                     <p class="cta__text">
                         入学ご検討の方は、まずは入学説明会に<br class="sp-block">お越しください
                     </p>
-                    <a href="/entry/" class="cta__button button button--main">入学説明会に申し込む</a>
+                    <a href="/entry" class="cta__button button button--main">入学説明会に申し込む</a>
                 </div>
             </div>
             <!-- /.cta -->
@@ -300,7 +289,7 @@
             <section class="main__section" id="price">
                 <div class="main__container">
                     <h2 class="title title--fix">費 用</h2>
-                    <table aria-label="price-list">
+                    <table aria-label="price-list" class="plan-table">
                         <thead>
                             <tr>
                                 <th>年間講数</th>
@@ -343,29 +332,27 @@
                     <p class="cta__text">
                         入学ご検討の方は、まずは入学説明会に<br class="sp-block">お越しください
                     </p>
-                    <a href="/entry/" class="cta__button button button--main">入学説明会に申し込む</a>
+                    <a href="/entry" class="cta__button button button--main">入学説明会に申し込む</a>
                 </div>
             </div>
             <!-- /.cta -->
             <!-- section  other -->
             <div class="section section--other">
                 <div class="section--other__container">
-                    <a href="/faq/" class="card card--left">
+                    <a href="/faq" class="card card--left">
                         <div class="card__image-wrapper">
                             <picture class="card__image">
                                 <source media="(min-width: 768px)" srcset="/assets/image/pht_qa_pc.jpg" type="image/jpg">
-                                <source media="(max-width: 767px)" srcset="/assets/image/pht_qa_sp.jpg" type="image/jpg">
-                                <img src="/assets/image/pht_qa_pc.jpg" alt="" class="picture-img" width="960" height="320">
+                                <img src="/assets/image/pht_qa_sp.jpg" alt="" class="picture-img" width="960" height="320">
                             </picture>
                         </div>
                         <p class="card__text">よくあるご質問</p>
                     </a>
-                    <a href="/search/" class="card card--left">
+                    <a href="/search" class="card card--left">
                         <div class="card__image-wrapper">
                             <picture class="card__image">
                                 <source media="(min-width: 768px)" srcset="/assets/image/pht_classrooms_pc.jpg" type="image/jpg">
-                                <source media="(max-width: 767px)" srcset="/assets/image/pht_classrooms_sp.jpg" type="image/jpg">
-                                <img src="/assets/image/pht_classrooms_pc.jpg" alt="" class="picture-img" width="960" height="320">
+                                <img src="/assets/image/pht_classrooms_sp.jpg" alt="" class="picture-img" width="960" height="320">
                             </picture>
                         </div>
                         <p class="card__text">お近くの教室を探す</p>

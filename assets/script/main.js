@@ -86,17 +86,17 @@ $(function () {
         let index = $tabsArray.indexOf(this);
 
         const resetTab = function () {
-            $('.js-tab.is-active').removeClass('is-active');
+            $('.js-tab.tab__button--active').removeClass('tab__button--active');
             $('.js-tab[aria-selected=true]').removeAttr('aria-selected');
             $tabs.attr('tabindex', -1);
-            $('.js-tab__panel.is-active').removeClass('is-active');
+            $('.js-tab__panel.tab__button--active').removeClass('tab__button--active');
         };
 
         const setTab = function (tab, tabpanel) {
-            $(tab).addClass('is-active');
+            $(tab).addClass('tab__button--active');
             $(tab).attr('tabindex', 0);
             $(tab).attr('aria-selected', true);
-            $(tabpanel).addClass('is-active');
+            $(tabpanel).addClass('tab__button--active');
         };
 
         if (event.type === 'keyup') {

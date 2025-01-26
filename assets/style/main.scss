@@ -392,6 +392,9 @@ img {
     }
 }
 
+
+
+
 .section {
     &--other {
         margin: 0 calc(50% - 50vw);
@@ -1046,7 +1049,7 @@ img {
             padding: px2Rem(15);
         }
 
-        &.is-active {
+        &.tab__button--active {
             background: $color-background;
             color: $color-normal;
         }
@@ -1060,26 +1063,29 @@ img {
         padding: vw(23) vw(16);
 
         @include mq {
-            padding: vwt(32) vwt(32) 0;
+            padding: vwt(32) vwt(32);
             margin: 0;
             width: auto;
-            margin-bottom: vwt(-9);
         }
 
         @include mq(lg) {
-            padding: px2Rem(32) px2Rem(32) 0;
-            margin-bottom: px2Rem(-9);
+            padding: px2Rem(32) px2Rem(32);
         }
 
-        &.is-active {
+        &.tab__button--active {
             display: flex;
             flex-wrap: wrap;
             flex-direction: column;
             background: $color-background;
 
             @include mq {
+                gap: vwt(40) vwt(30);
                 flex-direction: row;
                 justify-content: space-between;
+            }
+            @include mq(lg) {
+                gap: px2Rem(40) px2Rem(30);
+
             }
         }
     }
@@ -1125,20 +1131,9 @@ img {
     }
 
     &__item {
-        margin-bottom: vw(25);
-
         @include mq {
-            margin-bottom: vwt(40);
-
+            flex: 1 1 calc(50% - 7vw); /* 横幅調整 */
             width: 48.54%;
-        }
-
-        @include mq(lg) {
-            margin-bottom: px2Rem(40);
-        }
-
-        &:nth-of-type(2n) {
-            margin-right: 0;
         }
     }
 
@@ -1173,7 +1168,7 @@ img {
 
 }
 
-table {
+.plan-table {
     width: 100%;
     border-collapse: collapse;
     border: 3px solid $color-line;
