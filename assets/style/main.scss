@@ -402,136 +402,13 @@ img {
     // }
 }
 
-.reason{
-    // margin-top: vw(-50);
-    margin-bottom: vw(36);
-        @include mq {
-            padding: vwt(43) 0 vwt(72);
-            margin-top: 0;
-            margin-bottom: 0;
-        }
-
-        @include mq(lg) {
-            padding: px2Rem(72) 0;
-            padding: px2Rem(43) 0 px2Rem(72);
-        }
-
-    &__container {
-        padding: vw(64) 0;
-
-        @include mq {
-            max-width: vwt(1200);
-            padding: 0 vwt(20);
-            margin-inline: auto;
-        }
-
-        @include mq(lg) {
-            max-width: px2Rem(1200);
-            padding: 0 px2Rem(20);
-        }
-    }
-&__title{
-    //atode margin-top: -20px;
-    // padding-top: 20px;
-}
-
-}
-.course{
-        @include mq {
-            padding: vwt(72) 0;
-        }
-        @include mq(lg) {
-            padding: px2Rem(72) 0;
-        }
-
-    &__container {
-        padding: vw(64) 0;
-
-        @include mq {
-            max-width: vwt(1200);
-            padding: 0 vwt(20);
-            margin-inline: auto;
-        }
-
-        @include mq(lg) {
-            max-width: px2Rem(1200);
-            padding: 0 px2Rem(20);
-        }
-    }
-    &__title{
-        // atode tabのmargin-topを調整すればいいだけです。
-    }
-
-}
-.price{
-
-        @include mq {
-            padding: vwt(72) 0;
-        }
-
-        @include mq(lg) {
-            padding: px2Rem(72) 0;
-        }
-
-
-        &__container {
-        padding: vw(64) 0;
-
-        @include mq {
-            max-width: vwt(1200);
-            padding: 0 vwt(20);
-            margin-inline: auto;
-        }
-
-        @include mq(lg) {
-            max-width: px2Rem(1200);
-            padding: 0 px2Rem(20);
-        }
-    }
-
-
-}
-.other{
-    margin: 0 calc(50% - 50vw);
-    width: 100vw;
-        &__container {
-            display: flex;
-
-        padding: vw(64) 0;
-
-        @include mq {
-            max-width: vwt(1200);
-            padding: 0 vwt(20);
-            margin-inline: auto;
-        }
-
-        @include mq(lg) {
-            max-width: px2Rem(1200);
-            padding: 0 px2Rem(20);
-        }
-    }
-
-    &__section {
-        @include mq {
-            padding: vwt(72) 0;
-        }
-
-        @include mq(lg) {
-            padding: px2Rem(72) 0;
-        }
-
-    }
-}
-
-
-
 .footer {
-    padding: vw(32) vw(16);
+    padding: vw(25) vw(16);
     margin-inline: auto;
     background: #ddd;
     text-align: center;
     letter-spacing: .03em;
-
+@include lineheight(13,28);
     @include mq {
         padding: vwt(42) vwt(20);
     }
@@ -657,15 +534,18 @@ img {
         font-style: italic;
         font-weight: 900;
         margin-top: vw(10);
+            width: vw(142);
 
         @include mq {
             font-size: vwt(54);
             margin-top: vwt(20);
+            // width: vwt(142);
         }
 
         @include mq(lg) {
             font-size: px2Rem(54);
             margin-top: px2Rem(20);
+            // width: px2Rem(142);
 
         }
 
@@ -684,7 +564,6 @@ img {
 
     &__text {
         font-size: vw(14);
-
         @include mq {
             font-size: vwt(33);
         }
@@ -698,11 +577,11 @@ img {
         color: $color-main;
         font-weight: 900;
         font-size: vw(25);
-        line-height: 1.35;
+        line-height: 1.33;
 
         @include mq {
             font-size: vwt(60);
-            @include lineheight(25, 36, )
+            @include lineheight(25, 36)
         }
 
         @include mq(lg) {
@@ -714,7 +593,7 @@ img {
         padding: vw(24) vw(16) 0;
 
         @include mq {
-            margin-top: vwt(-33);
+            margin-top: vwt(-33); //atode
             padding: 0;
             display: flex;
             margin-inline: auto;
@@ -724,7 +603,7 @@ img {
 
         @include mq(lg) {
             max-width: px2Rem(1100);
-            margin-top: px2Rem(-33);
+            margin-top: px2Rem(-33);//atode
 
         }
 
@@ -786,7 +665,7 @@ img {
 .text {
     &--attension {
         color: #F23397;
-        line-height: 1.2;
+        // line-height: 1.2;
 
         @include mq {
             line-height: 1.17;
@@ -798,7 +677,7 @@ img {
         font-weight: bold;
         font-size: vw(28);
         font-family: "Poppins", serif;
-
+line-height: 1.18;
         @include mq {
             font-size: vwt(32);
         }
@@ -813,7 +692,7 @@ img {
     font-size: vw(28);
     font-weight: bold;
     @include lineheight(28, 36);
-    margin-bottom: vw(22);
+    margin-bottom: vw(19);
     text-align: center;
 
     @include mq {
@@ -823,7 +702,7 @@ img {
     }
 
     @include mq {
-        margin-bottom: px2Rem(32);
+        // margin-bottom: px2Rem(32);
         font-size: px2Rem(36);
     }
 
@@ -843,6 +722,134 @@ img {
     }
 
 }
+.reason{
+    margin-top: vw(25);
+    margin-bottom: vw(36);
+        @include mq {
+            padding: vwt(43) 0 vwt(72);
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        @include mq(lg) {
+            padding: px2Rem(72) 0;
+            padding: px2Rem(43) 0 px2Rem(72);
+        }
+
+    &__container {
+        padding: vw(64) 0;
+
+        @include mq {
+            max-width: vwt(1200);
+            padding: 0 vwt(20);
+            margin-inline: auto;
+        }
+
+        @include mq(lg) {
+            max-width: px2Rem(1200);
+            padding: 0 px2Rem(20);
+        }
+    }
+&__title{
+    //atode margin-top: -20px;
+    // padding-top: 20px;
+}
+
+}
+.course{
+        @include mq {
+            padding: vwt(72) 0;
+        }
+        @include mq(lg) {
+            padding: px2Rem(72) 0;
+        }
+
+    &__container {
+        padding: vw(68) 0 vw(91);
+
+        @include mq {
+            max-width: vwt(1200);
+            padding: 0 vwt(20);
+            margin-inline: auto;
+        }
+
+        @include mq(lg) {
+            max-width: px2Rem(1200);
+            padding: 0 px2Rem(20);
+        }
+    }
+    &__title{
+        // atode tabのmargin-topを調整すればいいだけです。
+        letter-spacing: 0.01em;
+        // margin-left: 16px;
+        margin-bottom: vw(20);
+    }
+
+}
+.price{
+
+        @include mq {
+            padding: vwt(72) 0;
+        }
+
+        @include mq(lg) {
+            padding: px2Rem(72) 0;
+        }
+
+
+        &__container {
+            padding: vw(68) 0 vw(62);
+
+
+        @include mq {
+            max-width: vwt(1200);
+            padding: 0 vwt(20);
+            margin-inline: auto;
+        }
+
+        @include mq(lg) {
+            max-width: px2Rem(1200);
+            padding: 0 px2Rem(20);
+        }
+    }
+&__title{
+    margin-bottom: vw(21);
+}
+
+}
+.other{
+    margin: 0 calc(50% - 50vw);
+    width: 100vw;
+        &__container {
+
+        // padding: vw(64) 0;
+
+        @include mq {
+            display: flex;
+
+            max-width: vwt(1200);
+            padding: 0 vwt(20);
+            margin-inline: auto;
+        }
+
+        @include mq(lg) {
+            max-width: px2Rem(1200);
+            padding: 0 px2Rem(20);
+        }
+    }
+
+    &__section {
+        @include mq {
+            padding: vwt(72) 0;
+        }
+
+        @include mq(lg) {
+            padding: px2Rem(72) 0;
+        }
+
+    }
+}
+
 
 .button {
     display: block;
@@ -963,7 +970,7 @@ img {
 }
 
 .media {
-    margin-bottom: vw(31);
+    margin-bottom: vw(34);
 
     &--reverse {
         @include mq {
@@ -1020,9 +1027,9 @@ img {
         font-family: "Poppins", serif;
         font-size: vw(24);
         font-style: italic;
-        font-weight: bold;
-        line-height: 1.1;
-        margin-bottom: vw(8);
+        font-weight: 700;
+        line-height: 1.13;
+        margin-bottom: vw(6);
 
         @include mq {
             font-size: vwt(28);
@@ -1076,7 +1083,7 @@ img {
     width: 100vw;
 
     &__container {
-        padding: vw(40) vw(16);
+        padding: vw(37) vw(16);
 
         @include mq {
             padding: vwt(55) vwt(20);
@@ -1166,7 +1173,7 @@ img {
         line-height: 1.75;
         margin: 0 calc(50% - 50vw);
         width: 100vw;
-        padding: vw(23) vw(16);
+        padding: vw(26) vw(16);
 
         @include mq {
             padding: vwt(32) vwt(32);
@@ -1183,6 +1190,7 @@ img {
             flex-wrap: wrap;
             flex-direction: column;
             background: $color-background;
+            gap: vw(25);
 
             @include mq {
                 gap: vwt(40) vwt(30);
@@ -1215,12 +1223,11 @@ img {
 
         &::before {
             position: absolute;
-            top: 50%;
+            top: 28%;
             left: 0;
-            transform: translateY(-63%);
             display: block;
             content: "";
-            width: vw(16);
+            width: vw(14);
             height: vw(15);
             background: url(/assets/image/icon_arrow_right_blue.svg) center center / contain no-repeat;
 
@@ -1244,7 +1251,7 @@ img {
     }
 
     &__image {
-        margin-bottom: vw(9);
+        margin-bottom: vw(8);
         border-radius: 12px;
         overflow: hidden;
         transition: .4s;
@@ -1281,19 +1288,19 @@ img {
 
     @include mq {
         width: vwt(600);
-        margin: vwt(50) auto vwt(-3);
+        margin: vwt(50) auto vwt(-3); //atode
     }
 
     @include mq(lg) {
         width: px2Rem(600);
-        margin: px2Rem(50) auto px2Rem(-3);
+        margin: px2Rem(50) auto px2Rem(-3); //atode
 
     }
 
     th,
     td {
         border: 1px solid $color-line;
-        padding: vw(15);
+
         text-align: center;
         word-break: break-word;
         vertical-align: middle;
@@ -1311,11 +1318,13 @@ img {
     }
 
     th {
+        padding: vw(18);
         background-color: #f4f4f4;
         font-weight: normal;
     }
 
     td {
+        padding: vw(15);
         &:first-child {
             width: vw(114);
 
