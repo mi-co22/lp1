@@ -8,3 +8,6 @@ Thumbs.db
 node_modules/
 vendor/
 wordpress/.htaccess
+# 課題用
+*.min.css
+*.min.css.map
