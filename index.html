@@ -46,7 +46,7 @@
                         </li>
                     </ul>
                     <div class="gnav__button">
-                        <a href="/entry/" class="button button--large">入学説明会に申し込む</a>
+                        <a href="/entry" class="button button--large">入学説明会に申し込む</a>
                     </div>
                 </nav>
             </div>
@@ -80,9 +80,9 @@
         <!-- /.mainvisual__list -->
         <main class="main">
             <!-- section #reason-->
-            <section class="reason" id="reason">
+            <section class="reason">
                 <div class="reason__container">
-                    <h2 class="title reason__title">選ばれる<span>3</span>つの理由</h2>
+                    <h2 class="title reason__title" id="reason">選ばれる<span>3</span>つの理由</h2>
                     <div class="media">
                         <picture class="media__image">
                             <source media="(min-width: 768px)" srcset="/assets/image/pht_reason_01_pc.jpg" type="image/jpg">
@@ -140,9 +140,9 @@
             </div>
             <!-- /.cta -->
             <!-- section #course-->
-            <section class="course" id="course">
+            <section class="course">
                 <div class="course__container">
-                    <h2 class="title course__title">コース・目的</h2>
+                    <h2 class="title course__title" id="course">コース・目的</h2>
                     <div class="tab">
                         <div class="tab__list" role="tablist">
                             <button class="tab__button tab__button--active js-tab" type="button" role="tab" id="tab1" aria-controls="tab__panel1"
@@ -286,40 +286,40 @@
             </div>
             <!-- /.cta -->
             <!-- section #price-->
-            <section class="price" id="price">
+            <section class="price">
                 <div class="price__container">
-                    <h2 class="title price__title">費 用</h2>
+                    <h2 class="title price__title" id="price">費 用</h2>
                     <table aria-label="price-list" class="plan-table">
                         <thead>
                             <tr>
-                                <th>年間講数</th>
-                                <th>年間授業料（税込み）</th>
+                                <th class="plan-table__header">年間講数</th>
+                                <th class="plan-table__header">年間授業料（税込み）</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>5講</td>
-                                <td class="text text--attension"><span>24,500</span>円</td>
+                                <td class="plan-table__data">5講</td>
+                                <td class="text text--attension plan-table__data"><span>24,500</span>円</td>
                             </tr>
                             <tr>
-                                <td>10講</td>
-                                <td class="text text--attension"><span>49,000</span>円</td>
+                                <td class="plan-table__data">10講</td>
+                                <td class="text text--attension plan-table__data"><span>49,000</span>円</td>
                             </tr>
                             <tr>
-                                <td>11講</td>
-                                <td class="text text--attension"><span>53,900</span>円</td>
+                                <td class="plan-table__data">11講</td>
+                                <td class="text text--attension plan-table__data"><span>53,900</span>円</td>
                             </tr>
                             <tr>
-                                <td>12講</td>
-                                <td class="text text--attension"><span>58,800</span>円</td>
+                                <td class="plan-table__data">12講</td>
+                                <td class="text text--attension plan-table__data"><span>58,800</span>円</td>
                             </tr>
                             <tr>
-                                <td>22講</td>
-                                <td class="text text--attension"><span>107,800</span>円</td>
+                                <td class="plan-table__data">22講</td>
+                                <td class="text text--attension plan-table__data"><span>107,800</span>円</td>
                             </tr>
                             <tr>
-                                <td>24講</td>
-                                <td class="text text--attension"><span>117,600</span>円</td>
+                                <td class="plan-table__data">24講</td>
+                                <td class="text text--attension plan-table__data"><span>117,600</span>円</td>
                             </tr>
                         </tbody>
                     </table>
@@ -339,16 +339,19 @@
             <!-- section  other -->
             <div class="other">
                 <div class="other__container">
-                    <a href="/faq" class="card card--left">
-                        <div class="card__image-wrapper">
-                            <picture class="card__image">
-                                <source media="(min-width: 768px)" srcset="/assets/image/pht_qa_pc.jpg" type="image/jpg">
-                                <img src="/assets/image/pht_qa_sp.jpg" alt="" class="picture-img" width="960" height="320">
-                            </picture>
+                    <a href="/faq" class="card">
+                        <div class="card__container">
+                            <div class="card__image-wrapper">
+                                <picture class="card__image">
+                                    <source media="(min-width: 768px)" srcset="/assets/image/pht_qa_pc.jpg" type="image/jpg">
+                                    <img src="/assets/image/pht_qa_sp.jpg" alt="" class="picture-img" width="960" height="320">
+                                </picture>
+                            </div>
+                            <p class="card__text">よくあるご質問</p>
                         </div>
-                        <p class="card__text">よくあるご質問</p>
                     </a>
-                    <a href="/search" class="card card--left">
+                    <a href="/search" class="card">
+                        <div class="card__container">
                         <div class="card__image-wrapper">
                             <picture class="card__image">
                                 <source media="(min-width: 768px)" srcset="/assets/image/pht_classrooms_pc.jpg" type="image/jpg">
@@ -356,6 +359,7 @@
                             </picture>
                         </div>
                         <p class="card__text">お近くの教室を探す</p>
+                    </div>
                     </a>
                 </div>
             </div>

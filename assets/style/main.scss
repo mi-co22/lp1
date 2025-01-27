@@ -86,7 +86,7 @@ $breakpoints: (
  * ======================================== */
  html{
     scroll-behavior: smooth;
-    scroll-padding-top: vw(20);
+    scroll-padding-top: vw(80);
     @include mq {
         scroll-padding-top: vwt(100);
     }
@@ -623,7 +623,7 @@ img {
     font-weight: bold;
     text-align: center;
     position: relative;
-    overflow: hidden;
+
     font-size: vw(22);
 
     @include mq {
@@ -642,7 +642,9 @@ img {
             transform: scale(1.2);
         }
     }
-
+&__container{
+    overflow: hidden;
+}
     &__image-wrapper {
         transition: .4s;
     }
@@ -734,7 +736,7 @@ line-height: 1.18;
         }
 
     &__container {
-        padding: vw(64) 0; //atode 崩れるかも？
+        // padding: vw(64) 0; //atode 崩れるかも？
         @include mq {
             max-width: vwt(1200);
             padding: 0 vwt(20);
@@ -1291,8 +1293,8 @@ line-height: 1.18;
 
     }
 
-    th,
-    td {
+    &__header,
+    &__data {
         border: 1px solid $color-line;
 
         text-align: center;
@@ -1311,7 +1313,7 @@ line-height: 1.18;
         }
     }
 
-    th {
+    &__header {
         padding: vw(18);
         background-color: #f4f4f4;
         font-weight: normal;
@@ -1329,7 +1331,7 @@ letter-spacing: 0.25em;
         }
     }
 
-    td {
+    &__data {
         padding: vw(15);
         @include mq {
     padding: vwt(20);
