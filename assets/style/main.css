@@ -746,6 +746,7 @@ img {
 
 .button {
   display: block;
+  margin-inline: auto;
   padding: 5.6vw 10.9333333333vw;
   border-radius: 2em;
   text-align: center;
@@ -1027,6 +1028,9 @@ img {
     margin-top: 1.1875rem;
   }
 }
+.cta__button {
+  margin: 0;
+}
 .cta__button--type1 {
   background-image: linear-gradient(90deg, rgb(246, 170, 0), rgb(250, 190, 57));
   margin-top: 2.4vw;
@@ -1294,3 +1298,4 @@ img {
     padding-bottom: 0.875rem;
   }
 }
+/*# sourceMappingURL=main.css.map */
